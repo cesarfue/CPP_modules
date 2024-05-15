@@ -3,16 +3,17 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: cesar <cesar@student.42.fr>                +#+  +:+       +#+         #
+#    By: cefuente <cefuente@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/14 12:54:18 by cefuente          #+#    #+#              #
-#    Updated: 2024/05/14 15:13:50 by cesar            ###   ########.fr        #
+#    Updated: 2024/05/15 11:23:46 by cefuente         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	book
 
-OBJS	=	book.cpp
+OBJS	=	main.cpp
+HEADER	=	Contact.hpp PhoneBook.hpp
 CC		=	g++
 FLAGS	=	-Wall -Wextra -Werror -Iincludes -g3 
 
