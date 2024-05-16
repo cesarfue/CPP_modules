@@ -6,7 +6,7 @@
 /*   By: cefuente <cefuente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 15:13:59 by cesar             #+#    #+#             */
-/*   Updated: 2024/05/16 10:19:38 by cefuente         ###   ########.fr       */
+/*   Updated: 2024/05/16 14:18:46 by cefuente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,34 @@ enum Command {
 	INVALID
 };
 
+typedef void (Contact::*Setter)(const std::string&);
+
+Setter	setters[] = {
+	&Contact::setFirstName,
+	&Contact::setLastName,
+	&Contact::setNickname,
+	&Contact::setPhoneNumber,
+	&Contact::setDarkestSecret
+};
+
+typedef std::string (Contact::*Getter)(void);
+
+Getter	getters[] = {
+	&Contact::getFirstName,
+	&Contact::getLastName, 
+	&Contact::getNickname,
+	&Contact::getPhoneNumber,
+	&Contact::getDarkestSecret
+};
+
+std::string prompts[] = {
+	"First name",
+	"Last name",
+	"Nickname",
+	"Phone number",
+	"Darkest secret"
+};
+
 Command	get_command(const std::string& str) {
 	if (str == "ADD") return ADD;
 	else if (str == "SEARCH") return SEARCH;
@@ -37,38 +65,37 @@ std::string trym(const std::string& str) {
 	return (str);
 }
 
+bool	is_input_empty(std::string& str) {
+	for (size_t i = 0; i < str.length(); i++) {
+		if (!isspace(str[i])) { return false; }
+	}
+	std::cout << "Invalid entry";
+	std::cout << std::endl;
+	return true; 
+}
+
+std::string	add_entry(int iContact, int iPrompt, PhoneBook& book, std::string& str) {
+	std::getline(std::cin, str);
+	if (is_input_empty(str) == true) { return ""; }
+	else { (book.contact[iContact].*setters[iPrompt])(str); }
+	return str;
+}
+
 int	add(PhoneBook& book)
 {
-	static int i = -1;
+	std::string str;
+	static int iContact = -1;
 
-	if (++i == 8) { i = 0; }
-	book.deleteContact(i);
-
-	std::string first_name;
-	std::cout << "First name : ";
-	std::getline(std::cin, first_name);
-	book.contact[i].setFirstName(first_name);
-
-	std::string last_name;
-	std::cout << "Last name : ";
-	std::getline(std::cin, last_name);
-	book.contact[i].setLastName(last_name);
-
-	std::string nickname;
-	std::cout << "Nickname : ";
-	std::getline(std::cin, nickname);
-	book.contact[i].setNickname(nickname);
-
-	std::string phone_number;
-	std::cout << "Phone number : ";
-	std::getline(std::cin, phone_number);
-	book.contact[i].setPhoneNumber(phone_number);
-
-	std::string darkest_secret;
-	std::cout << "Darkest secret : ";
-	std::getline(std::cin, darkest_secret);
-	book.contact[i].setDarkestSecret(darkest_secret);
-
+	if (++iContact == 8) { iContact = 0; }
+	book.deleteContact(iContact);
+	
+	for (int iPrompt = 0; iPrompt < 5; ++iPrompt) {
+		std::cout << prompts[iPrompt] << " : ";
+		while (add_entry(iContact, iPrompt, book, str).empty()) {
+			std::cout << prompts[iPrompt] << " : ";
+			if (str == "EXIT") { exit(0); }
+		}
+	}
 	return (0);	
 }
 
@@ -76,10 +103,11 @@ int	search(PhoneBook& book)
 {
 	int index;
 
+	std::cout << '\n';
 	std::cout << std::setw(10) << "Index" << "|";
-	std::cout << std::setw(10) << "First Name" << "|";
-	std::cout << std::setw(10) << "Last Name" << "|";
-	std::cout << std::setw(10) << "Nickname" << "|";
+	for (int iPrompt = 0; iPrompt < 3; ++iPrompt) {
+		std::cout << std::setw(10) << prompts[iPrompt] << "|";
+	}
 	std::cout << std::endl;
 	std::cout << std::setw(40) << "   _________________________________________";
 	std::cout << std::endl;
@@ -88,7 +116,7 @@ int	search(PhoneBook& book)
 			std::cout << std::setw(10) << i << "|";
 			std::cout << std::setw(10) << trym(book.contact[i].getFirstName()) << "|";
 			std::cout << std::setw(10) << trym(book.contact[i].getLastName()) << "|";
-			std::cout << std::setw(10) << trym(book.contact[i].getNickname()) << "|";
+			std::cout << std::setw(10) << trym(book.contact[i].getNickname()) << "|\n";
 			std::cout << std::endl;
 		}
 	}
@@ -100,15 +128,15 @@ int	search(PhoneBook& book)
 		std::cerr << "Invalid contact index\n";
 		return (0);
 	}
-	if (index <= 0 || index > 7) {
+	if (index < 0 || index > 7) {
 		std::cout << "Invalid contact index\n";
 		return (0);
 	}
-	std::cout << "First Name : " << book.contact[index].getFirstName() << std::endl;
-	std::cout << "Last Name : " << book.contact[index].getLastName() << std::endl;
-	std::cout << "Nickname : " << book.contact[index].getNickname() << std::endl;
-	std::cout << "Phone number : " << book.contact[index].getPhoneNumber() << std::endl;
-	std::cout << "Darkest secret : " << book.contact[index].getDarkestSecret() << std::endl;
+	std::cout << '\n';
+	for (int iPrompt = 0; iPrompt < 4; ++iPrompt) {
+		std::cout << prompts[iPrompt] << " : " << (book.contact[index].*getters[iPrompt])() << std::endl;
+	}
+	std::cout << std::endl;
 	return (0);
 }
 
