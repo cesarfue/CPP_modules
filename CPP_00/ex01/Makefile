@@ -6,7 +6,7 @@
 #    By: cefuente <cefuente@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/14 12:54:18 by cefuente          #+#    #+#              #
-#    Updated: 2024/05/15 11:23:46 by cefuente         ###   ########.fr        #
+#    Updated: 2024/05/16 09:31:43 by cefuente         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,8 +14,8 @@ NAME	=	book
 
 OBJS	=	main.cpp
 HEADER	=	Contact.hpp PhoneBook.hpp
-CC		=	g++
-FLAGS	=	-Wall -Wextra -Werror -Iincludes -g3 
+CC		=	c++
+FLAGS	=	-Wall -Wextra -Werror -std=c++98 -g
 
 all			:	$(NAME)
 

@@ -3,15 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cesar <cesar@student.42.fr>                +#+  +:+       +#+        */
+/*   By: cefuente <cefuente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 15:13:59 by cesar             #+#    #+#             */
-/*   Updated: 2024/05/15 14:58:59 by cesar            ###   ########.fr       */
+/*   Updated: 2024/05/16 10:19:38 by cefuente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream> 
 #include <iomanip>
+#include <sstream>
+#include <cstdlib>
 #include "PhoneBook.hpp"
 #include "Contact.hpp"
 
@@ -31,24 +33,17 @@ Command	get_command(const std::string& str) {
 
 std::string trym(const std::string& str) {
 	if (str.length() > 10)
-		return (str.substr(0, 7) + "...");
+		return (str.substr(0, 9) + ".");
 	return (str);
 }
 
 int	add(PhoneBook& book)
 {
-	static int i = 0;
+	static int i = -1;
 
-	for (;i < 8; i++) {
-		if (book.contact[i].isEmpty()) {
-			break ;
-		}
-		else if (i == 7) {
-			i = 0;
-			book.deleteContact(i); 
-			break ;
-		}
-	}
+	if (++i == 8) { i = 0; }
+	book.deleteContact(i);
+
 	std::string first_name;
 	std::cout << "First name : ";
 	std::getline(std::cin, first_name);
@@ -79,18 +74,41 @@ int	add(PhoneBook& book)
 
 int	search(PhoneBook& book)
 {
+	int index;
+
+	std::cout << std::setw(10) << "Index" << "|";
+	std::cout << std::setw(10) << "First Name" << "|";
+	std::cout << std::setw(10) << "Last Name" << "|";
+	std::cout << std::setw(10) << "Nickname" << "|";
+	std::cout << std::endl;
+	std::cout << std::setw(40) << "   _________________________________________";
+	std::cout << std::endl;
 	for (int i = 0; i < 8; i++) {
 		if (!book.contact[i].isEmpty()) {
 			std::cout << std::setw(10) << i << "|";
 			std::cout << std::setw(10) << trym(book.contact[i].getFirstName()) << "|";
 			std::cout << std::setw(10) << trym(book.contact[i].getLastName()) << "|";
-			std::cout << std::setw(10) << trym(book.contact[i].getNickName()) << "|";
+			std::cout << std::setw(10) << trym(book.contact[i].getNickname()) << "|";
 			std::cout << std::endl;
-			std::cout << "Enter contact index for more informations : "
-			std::int index;
-			std::getline(std::cin, index); 
 		}
 	}
+	std::cout << "Enter contact index for more informations : ";
+	std::string input;
+	std::getline(std::cin, input);
+	std::stringstream ss(input);
+	if (!(ss >> index)) {
+		std::cerr << "Invalid contact index\n";
+		return (0);
+	}
+	if (index <= 0 || index > 7) {
+		std::cout << "Invalid contact index\n";
+		return (0);
+	}
+	std::cout << "First Name : " << book.contact[index].getFirstName() << std::endl;
+	std::cout << "Last Name : " << book.contact[index].getLastName() << std::endl;
+	std::cout << "Nickname : " << book.contact[index].getNickname() << std::endl;
+	std::cout << "Phone number : " << book.contact[index].getPhoneNumber() << std::endl;
+	std::cout << "Darkest secret : " << book.contact[index].getDarkestSecret() << std::endl;
 	return (0);
 }
 

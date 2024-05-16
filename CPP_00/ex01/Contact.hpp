@@ -6,7 +6,7 @@
 /*   By: cefuente <cefuente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 15:47:55 by cesar             #+#    #+#             */
-/*   Updated: 2024/05/15 12:59:02 by cefuente         ###   ########.fr       */
+/*   Updated: 2024/05/16 09:01:58 by cefuente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ class Contact {
 		std::string getLastName() { return last_name; }
 		void setLastName(const std::string& str) { last_name = str; }
 
-		std::string getNickName() { return nickname; }
+		std::string getNickname() { return nickname; }
 		void setNickname(const std::string& str) { nickname = str; }
 
 		std::string getPhoneNumber() { return phone_number; }
