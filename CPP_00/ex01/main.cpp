@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cefuente <cefuente@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cesar <cesar@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 15:13:59 by cesar             #+#    #+#             */
-/*   Updated: 2024/05/15 13:14:11 by cefuente         ###   ########.fr       */
+/*   Updated: 2024/05/15 14:58:59 by cesar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,9 +87,8 @@ int	search(PhoneBook& book)
 			std::cout << std::setw(10) << trym(book.contact[i].getNickName()) << "|";
 			std::cout << std::endl;
 			std::cout << "Enter contact index for more informations : "
-			std::string input;
-			std::getline(std::cin,input);
-			std::stringstream 
+			std::int index;
+			std::getline(std::cin, index); 
 		}
 	}
 	return (0);
