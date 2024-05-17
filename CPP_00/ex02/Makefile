@@ -6,11 +6,11 @@
 #    By: cefuente <cefuente@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/14 12:54:18 by cefuente          #+#    #+#              #
-#    Updated: 2024/05/16 14:27:58 by cefuente         ###   ########.fr        #
+#    Updated: 2024/05/17 11:01:15 by cefuente         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	book
+NAME	=	a.out
 
 OBJS	=	Account.cpp tests.cpp 
 HEADER	=	Account.hpp
