@@ -6,16 +6,17 @@
 #    By: cefuente <cefuente@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/14 12:54:18 by cefuente          #+#    #+#              #
-#    Updated: 2024/05/17 14:46:55 by cefuente         ###   ########.fr        #
+#    Updated: 2024/05/17 14:44:33 by cefuente         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	megaphone
+NAME	=	a.out
 
-SRCS	=	main.cpp
+SRCS	=	Zombie.cpp newZombie.cpp randomChump.cpp main.cpp
 OBJS	=	$(addprefix $(OBJS_DIR), $(SRCS:.cpp=.o))
-
+HEADER	=	Zombie.hpp
 OBJS_DIR = objs/
+
 RM		= rm -r
 CC		=	c++
 FLAGS	=	-Wall -Wextra -Werror -std=c++98 -g
