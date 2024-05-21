@@ -1,27 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cesar <cesar@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/17 11:33:06 by cefuente          #+#    #+#             */
-/*   Updated: 2024/05/19 07:43:08 by cesar            ###   ########.fr       */
+/*   Created: 2024/05/19 08:31:05 by cesar             #+#    #+#             */
+/*   Updated: 2024/05/21 08:58:21 by cesar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef HUMANA_HPP
+#define HUMANA_HPP
 
-int	main(void) {
-	// Create the zombies
-	int size = 10;
-	Zombie	*Horde = zombieHorde(size, "Mr Smith");
+#include <iostream>
+#include "Weapon.hpp"
+
+class	HumanA {
 	
-	for (int i = 0; i < size; ++i) { 
-		Horde[i].announce();
-	}
-	// Destory the allocated Zombies
-	delete[] Horde;
+	private :
+		std::string _name;
+		Weapon &_weapon;
 
-	return 0;
-}
+	public :
+		HumanA(std::string name, Weapon &weapon);
+		~HumanA(void);
+		void	attack(void);
+		void	setName(std::string name);
+		std::string	getName(void) const; 
+		
+		
+};
+
+
+#endif

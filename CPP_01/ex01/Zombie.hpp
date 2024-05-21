@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cefuente <cefuente@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cesar <cesar@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 11:34:32 by cefuente          #+#    #+#             */
-/*   Updated: 2024/05/17 13:54:05 by cefuente         ###   ########.fr       */
+/*   Updated: 2024/05/18 18:57:14 by cesar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,17 +21,15 @@ class Zombie {
 		std::string name;
 
 	public	:
-		Zombie( std::string name );
-		~Zombie( void );
+		Zombie(std::string name);
+		Zombie(void);
+		~Zombie(void);
 
-		void	announce( void ) {
-			std::cout << name << ": " << "BraiiiiiiinnnzzzZ..." << std::endl;
-		}
-		void 		setName(std::string str) { name = str; }
-		std::string getName( void ) { return name; }
+		void	announce(void);
+		void 	setName(std::string name);
+		std::string getName(void);
 };
 
-Zombie	*NewZombie( std::string name );
-void	randomChump( std::string name );
+Zombie	*zombieHorde(int N, std::string name);
 
 #endif

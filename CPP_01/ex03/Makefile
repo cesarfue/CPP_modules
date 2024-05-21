@@ -6,20 +6,20 @@
 #    By: cesar <cesar@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/14 12:54:18 by cefuente          #+#    #+#              #
-#    Updated: 2024/05/19 07:56:59 by cesar            ###   ########.fr        #
+#    Updated: 2024/05/19 08:29:02 by cesar            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	a.out
 
-SRCS	=	Zombie.cpp newZombie.cpp randomChump.cpp main.cpp
+SRCS	=	Weapon.cpp HumanA.cpp HumanB.cpp main.cpp
 OBJS	=	$(addprefix $(OBJS_DIR), $(SRCS:.cpp=.o))
-HEADER	=	Zombie.hpp
-OBJS_DIR = objs/
+HEADER	=	Weapon.hpp HumanA.hpp HumanB.hpp 
+OBJS_DIR = 	objs/
 
 RM		= rm -r
 CC		=	c++
-FLAGS	=	-Wall -Wextra -Werror -std=c++98 -g -fPIE
+FLAGS	=	-Wall -Wextra -Werror -std=c++98 -g
 
 all			:	$(NAME)
 

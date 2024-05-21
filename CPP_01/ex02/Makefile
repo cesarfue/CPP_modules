@@ -6,20 +6,19 @@
 #    By: cesar <cesar@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/14 12:54:18 by cefuente          #+#    #+#              #
-#    Updated: 2024/05/19 07:56:59 by cesar            ###   ########.fr        #
+#    Updated: 2024/05/19 08:25:33 by cesar            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	a.out
 
-SRCS	=	Zombie.cpp newZombie.cpp randomChump.cpp main.cpp
+SRCS	=	main.cpp
 OBJS	=	$(addprefix $(OBJS_DIR), $(SRCS:.cpp=.o))
-HEADER	=	Zombie.hpp
-OBJS_DIR = objs/
+OBJS_DIR = 	objs/
 
 RM		= rm -r
 CC		=	c++
-FLAGS	=	-Wall -Wextra -Werror -std=c++98 -g -fPIE
+FLAGS	=	-Wall -Wextra -Werror -std=c++98 -g
 
 all			:	$(NAME)
 
@@ -27,7 +26,7 @@ $(NAME)		:	$(OBJS)
 	@$(CC) $(FLAGS) $(OBJS) -o $(NAME)
 	@echo "\033[1;32mCompiled !\033[0m"
 
-$(OBJS_DIR)%.o	:	$(SRCS_DIR)%.cpp $(HEADER)
+$(OBJS_DIR)%.o	:	$(SRCS_DIR)%.cpp
 	@mkdir -p $(dir $@)
 	@echo "\033[1;30mCompiling [$<]\033m"
 	@$(CC) $(FLAGS) -c $< -o $@

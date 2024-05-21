@@ -5,23 +5,30 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cesar <cesar@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/17 11:33:06 by cefuente          #+#    #+#             */
-/*   Updated: 2024/05/19 07:43:08 by cesar            ###   ########.fr       */
+/*   Created: 2024/05/19 08:10:49 by cesar             #+#    #+#             */
+/*   Updated: 2024/05/19 08:26:30 by cesar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include <iostream>
 
 int	main(void) {
-	// Create the zombies
-	int size = 10;
-	Zombie	*Horde = zombieHorde(size, "Mr Smith");
 	
-	for (int i = 0; i < size; ++i) { 
-		Horde[i].announce();
-	}
-	// Destory the allocated Zombies
-	delete[] Horde;
+	std::string str = "HI THIS IS BRAIN";
 
+	std::string *stringPTR = &str;
+	std::string &stringREF = str;
+	
+	std::cout << "\nMemory addresses : \n" << \
+		"&str is " << &str << '\n' << \
+		"&stringPTR	is " << stringPTR << '\n' << \
+		"&stringREF is " << &stringREF << std::endl;
+
+	std::cout << "\nValues : \n" << \
+		"str is " << str << '\n' << \
+		"stringPTR is " << *stringPTR << '\n' << \
+		"stringREF is " << stringREF << '\n' << std::endl;
+	
 	return 0;
+	
 }

@@ -5,23 +5,31 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cesar <cesar@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/17 11:33:06 by cefuente          #+#    #+#             */
-/*   Updated: 2024/05/19 07:43:08 by cesar            ###   ########.fr       */
+/*   Created: 2024/05/19 08:27:28 by cesar             #+#    #+#             */
+/*   Updated: 2024/05/21 08:48:23 by cesar            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "HumanA.hpp"
+#include "HumanB.hpp"
+#include "Weapon.hpp"
 
-int	main(void) {
-	// Create the zombies
-	int size = 10;
-	Zombie	*Horde = zombieHorde(size, "Mr Smith");
-	
-	for (int i = 0; i < size; ++i) { 
-		Horde[i].announce();
+int main()
+{
+	{
+		Weapon club = Weapon("crude spiked club");
+		HumanA bob("Bob", club);
+		bob.attack();
+		club.setType("some other type of club");
+		bob.attack();
 	}
-	// Destory the allocated Zombies
-	delete[] Horde;
-
+	{
+		Weapon club = Weapon("crude spiked club");
+		HumanB jim("Jim");
+		jim.setWeapon(club);
+		jim.attack();
+		club.setType("some other type of club");
+		jim.attack();
+	}
 	return 0;
 }

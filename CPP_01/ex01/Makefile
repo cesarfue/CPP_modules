@@ -3,16 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: cefuente <cefuente@student.42.fr>          +#+  +:+       +#+         #
+#    By: cesar <cesar@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/14 12:54:18 by cefuente          #+#    #+#              #
-#    Updated: 2024/05/17 14:44:01 by cefuente         ###   ########.fr        #
+#    Updated: 2024/05/18 18:11:14 by cesar            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	a.out
 
-SRCS	=	Zombie.cpp newZombie.cpp randomChump.cpp main.cpp
+SRCS	=	zombieHorde.cpp Zombie.cpp main.cpp
 OBJS	=	$(addprefix $(OBJS_DIR), $(SRCS:.cpp=.o))
 HEADER	=	Zombie.hpp
 OBJS_DIR = 	objs/
