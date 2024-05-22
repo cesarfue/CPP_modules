@@ -6,7 +6,7 @@
 /*   By: cefuente <cefuente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 14:17:26 by cefuente          #+#    #+#             */
-/*   Updated: 2024/05/22 09:23:01 by cefuente         ###   ########.fr       */
+/*   Updated: 2024/05/22 13:57:19 by cefuente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 # define HARL_HPP
 
 # include <iostream>
-# include <map>
-# include <array>
 
 class	Harl {
 
@@ -29,6 +27,13 @@ class	Harl {
 		Harl(void);
 		~Harl(void);
 		void complain(std::string level);
-};	
+};
+
+static std::string levels[] = {
+	"debug",
+	"info",
+	"warning",
+	"error"
+};
 
 #endif

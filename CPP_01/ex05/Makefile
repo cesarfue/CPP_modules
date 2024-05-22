@@ -6,11 +6,11 @@
 #    By: cefuente <cefuente@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/14 12:54:18 by cefuente          #+#    #+#              #
-#    Updated: 2024/05/21 14:18:39 by cefuente         ###   ########.fr        #
+#    Updated: 2024/05/22 13:57:35 by cefuente         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	sed
+NAME	=	harl
 
 SRCS	=	main.cpp Harl.cpp
 OBJS	=	$(addprefix $(OBJS_DIR), $(SRCS:.cpp=.o))
