@@ -6,7 +6,7 @@
 /*   By: cefuente <cefuente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 14:17:21 by cefuente          #+#    #+#             */
-/*   Updated: 2024/05/22 09:26:15 by cefuente         ###   ########.fr       */
+/*   Updated: 2024/05/22 10:41:47 by cefuente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,15 @@ Harl::Harl(void) {}
 Harl::~Harl(void) {}
 
 void	Harl::complain(std::string level) {
-	std::map<std::string, void (Harl::*)()> complains_map = {
-		{"debug", &Harl::debug},
-		{"info", &Harl::info},
-		{"warning", &Harl::warning},
-		{"error", &Harl::error}
+
+	void (Harl::*complains[])() = {
+		&Harl::debug,
+		&Harl::info,
+		&Harl::warning,
+		&Harl::error
 	};
+	for (size_t i = 0; )
+	(Harl::*complains[level])();
 }
 
 void	Harl::debug(void) {
