@@ -6,11 +6,11 @@
 #    By: cefuente <cefuente@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/14 12:54:18 by cefuente          #+#    #+#              #
-#    Updated: 2024/05/17 14:46:45 by cefuente         ###   ########.fr        #
+#    Updated: 2024/05/23 10:59:04 by cefuente         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	a.out
+NAME	=	PhoneBook
 
 SRCS	=	main.cpp
 OBJS	=	$(addprefix $(OBJS_DIR), $(SRCS:.cpp=.o))

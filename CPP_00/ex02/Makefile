@@ -6,11 +6,11 @@
 #    By: cefuente <cefuente@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/14 12:54:18 by cefuente          #+#    #+#              #
-#    Updated: 2024/05/17 14:45:50 by cefuente         ###   ########.fr        #
+#    Updated: 2024/05/23 11:01:04 by cefuente         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	a.out
+NAME	=	account
 
 SRCS	=	Account.cpp tests.cpp 
 OBJS	=	$(addprefix $(OBJS_DIR), $(SRCS:.cpp=.o))
