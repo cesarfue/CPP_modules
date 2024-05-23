@@ -6,7 +6,7 @@
 /*   By: cefuente <cefuente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 14:17:26 by cefuente          #+#    #+#             */
-/*   Updated: 2024/05/22 14:09:37 by cefuente         ###   ########.fr       */
+/*   Updated: 2024/05/23 10:45:42 by cefuente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,14 @@ class	Harl {
 	public	:
 		Harl(void);
 		~Harl(void);
-		void complain(std::string level, size_t index);
+		void complain(size_t index);
 };
 
 static std::string levels[] = {
-	"debug",
-	"info",
-	"warning",
-	"error"
+	"DEBUG",
+	"INFO",
+	"WARNING",
+	"ERROR"
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: cefuente <cefuente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 14:17:21 by cefuente          #+#    #+#             */
-/*   Updated: 2024/05/22 14:13:41 by cefuente         ###   ########.fr       */
+/*   Updated: 2024/05/23 10:45:36 by cefuente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ Harl::Harl(void) {}
 
 Harl::~Harl(void) {}
 
-void	Harl::complain(std::string level, size_t index) {
+void	Harl::complain(size_t index) {
 
 	void (Harl::*complains[])() = {
 		&Harl::debug,
@@ -24,9 +24,7 @@ void	Harl::complain(std::string level, size_t index) {
 		&Harl::warning,
 		&Harl::error
 	};
-	for (size_t i = index; i < 4; ++i) {
-		(this->*complains[i])();
-	}
+	(this->*complains[index])();
 }
 
 void	Harl::debug(void) {
