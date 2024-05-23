@@ -6,13 +6,13 @@
 #    By: cefuente <cefuente@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/14 12:54:18 by cefuente          #+#    #+#              #
-#    Updated: 2024/05/23 10:59:04 by cefuente         ###   ########.fr        #
+#    Updated: 2024/05/23 13:16:23 by cefuente         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	PhoneBook
 
-SRCS	=	main.cpp
+SRCS	=	main.cpp Contact.cpp PhoneBook.cpp
 OBJS	=	$(addprefix $(OBJS_DIR), $(SRCS:.cpp=.o))
 HEADER	=	Contact.hpp PhoneBook.hpp
 

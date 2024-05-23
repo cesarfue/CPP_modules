@@ -6,7 +6,7 @@
 /*   By: cefuente <cefuente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 15:13:59 by cesar             #+#    #+#             */
-/*   Updated: 2024/05/16 14:18:46 by cefuente         ###   ########.fr       */
+/*   Updated: 2024/05/23 13:44:18 by cefuente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -146,8 +146,7 @@ int	main(void) {
 	Command cmd;
 
 	std::string input;
-	while (1) {
-		std::getline(std::cin, input);
+	while (getline(std::cin, input)) {
 		cmd = get_command(input);
 		switch (cmd) {
 			case ADD: 

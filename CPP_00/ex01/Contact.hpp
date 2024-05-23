@@ -6,7 +6,7 @@
 /*   By: cefuente <cefuente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 15:47:55 by cesar             #+#    #+#             */
-/*   Updated: 2024/05/16 09:01:58 by cefuente         ###   ########.fr       */
+/*   Updated: 2024/05/23 13:10:18 by cefuente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,30 +25,30 @@ class Contact {
 		std::string darkest_secret;
 
 	public : 
-		std::string getFirstName() { return first_name; }
-		void setFirstName(const std::string& str) { first_name = str; }
+		std::string getFirstName(void);
+		void setFirstName(const std::string& str);
 
-		std::string getLastName() { return last_name; }
-		void setLastName(const std::string& str) { last_name = str; }
+		std::string getLastName(void);
+		void setLastName(const std::string& str);
 
-		std::string getNickname() { return nickname; }
-		void setNickname(const std::string& str) { nickname = str; }
+		std::string getNickname(void);
+		void setNickname(const std::string& str);
 
-		std::string getPhoneNumber() { return phone_number; }
-		void setPhoneNumber(const std::string& str) { phone_number = str; }
+		std::string getPhoneNumber(void);
+		void setPhoneNumber(const std::string& str);
 
-		std::string getDarkestSecret() { return darkest_secret; }
-		void setDarkestSecret(const std::string& str) { darkest_secret = str; }
+		std::string getDarkestSecret(void);
+		void setDarkestSecret(const std::string& str);
 
-	bool isEmpty() { return first_name.empty(); }
+		bool isEmpty();
 
-	void reset() { 
-		first_name = "";
-		last_name = "";
-		nickname = "";
-		phone_number = "";
-		darkest_secret = "";
-	}
+		void reset() { 
+			first_name = "";
+			last_name = "";
+			nickname = "";
+			phone_number = "";
+			darkest_secret = "";
+		}
 	
 };	
 
