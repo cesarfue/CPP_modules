@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cesar <cesar@student.42.fr>                +#+  +:+       +#+        */
+/*   By: cefuente <cefuente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 11:33:06 by cefuente          #+#    #+#             */
-/*   Updated: 2024/05/19 07:57:58 by cesar            ###   ########.fr       */
+/*   Updated: 2024/06/18 12:25:27 by cefuente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ int	main(void) {
 		"Momo"
 	};
 
-	// Create the zombies
 	for (int i =  0; i < 4; ++i) {
 		zombie[i] = NewZombie(ZombieNames[i]);
 		randomChump(RandomChumpsNames[i]);
@@ -39,7 +38,6 @@ int	main(void) {
 		zombie[i]->announce();
 	}
 
-	// Destory the allocated Zombies
 	for (int i = 0; i < 4; ++i) {
 		delete(zombie[i]);
 	}
