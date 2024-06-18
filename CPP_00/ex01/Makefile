@@ -6,7 +6,7 @@
 #    By: cefuente <cefuente@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/14 12:54:18 by cefuente          #+#    #+#              #
-#    Updated: 2024/05/23 13:16:23 by cefuente         ###   ########.fr        #
+#    Updated: 2024/06/18 10:20:32 by cefuente         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ FLAGS	=	-Wall -Wextra -Werror -std=c++98 -g
 
 all			:	$(NAME)
 
-$(NAME)		:	$(OBJS)
+$(NAME)		:	$(OBJS) $(HEADER)
 	@$(CC) $(FLAGS) $(OBJS) -o $(NAME)
 	@echo "\033[1;32mCompiled !\033[0m"
 

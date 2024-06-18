@@ -6,7 +6,7 @@
 /*   By: cefuente <cefuente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 15:47:55 by cesar             #+#    #+#             */
-/*   Updated: 2024/05/23 13:10:18 by cefuente         ###   ########.fr       */
+/*   Updated: 2024/06/18 10:40:49 by cefuente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define CONTACT_HPP
 
 # include <iostream>
-# include "PhoneBook.hpp"
+
 
 class Contact {
 	private :
