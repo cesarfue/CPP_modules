@@ -6,7 +6,7 @@
 /*   By: cefuente <cefuente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 15:13:59 by cesar             #+#    #+#             */
-/*   Updated: 2024/06/18 11:15:25 by cefuente         ###   ########.fr       */
+/*   Updated: 2024/06/18 11:17:49 by cefuente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -150,7 +150,7 @@ int	search(PhoneBook& book)
 		return (0);
 	}
 	std::cout << '\n';
-	for (int iPrompt = 0; iPrompt < 4; ++iPrompt)
+	for (int iPrompt = 0; iPrompt < 5; ++iPrompt)
 	{
 		std::cout << prompts[iPrompt] << " : " << (book.contact[index].*getters[iPrompt])() << std::endl;
 	}
