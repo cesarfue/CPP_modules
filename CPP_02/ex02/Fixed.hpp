@@ -6,7 +6,7 @@
 /*   By: cefuente <cefuente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 14:15:09 by cefuente          #+#    #+#             */
-/*   Updated: 2024/06/19 11:07:08 by cefuente         ###   ########.fr       */
+/*   Updated: 2024/06/19 11:28:34 by cefuente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,6 @@ class	Fixed {
 		/* Destructor */
 		~Fixed(void);
 
-		/* Overloading operators  */
-		Fixed	&operator=(const Fixed &src);
-		friend std::ostream	&operator<<(std::ostream&, Fixed const &fixed);
-
 		/* Getters / Setters */
 		int		getRawBits(void) const;
 		void	setRawBits(int const raw);
@@ -43,4 +39,37 @@ class	Fixed {
 		/* Other functions */
 		float	toFloat(void) const;
 		int		toInt(void) const;
+
+		/* Overloading operators  */
+
+			/* Output stream  */
+		friend std::ostream	&operator<<(std::ostream&, Fixed const &fixed);
+			/* Copy assignment operator */
+		Fixed	&operator=(const Fixed &src);
+			/* Comparison operators */
+		bool	operator>(Fixed src) const;
+		bool	operator<(Fixed src) const;
+		bool	operator>=(Fixed src) const;
+		bool	operator<=(Fixed src) const;
+		bool	operator==(Fixed src) const;
+		bool	operator!=(Fixed src) const;
+			/* Arithmetic operators */
+		float	operator+(Fixed src) const;
+		float	operator-(Fixed src) const;
+		float	operator*(Fixed src) const;
+		float	operator/(Fixed src) const;
+			/* Pre and post incrementation operators */
+				/* Pre increment / pre decrement */
+		Fixed	operator++();
+		Fixed	operator--();
+				/* Post decrement / post decrement */
+		Fixed	operator++(int);
+		Fixed	operator--(int);
+		
+		/* Other functions */
+		static Fixed	&min(Fixed &a, Fixed &b);
+		static const Fixed	&min(const Fixed &a, const Fixed &b);
+		static Fixed	&max(Fixed &a, Fixed &b);
+		static const Fixed	&max(const Fixed &a, const Fixed &b);
+
 };
