@@ -6,14 +6,12 @@
 /*   By: cefuente <cefuente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 14:16:13 by cefuente          #+#    #+#             */
-/*   Updated: 2024/06/18 17:09:25 by cefuente         ###   ########.fr       */
+/*   Updated: 2024/06/19 09:45:07 by cefuente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <cmath>
 #include <iostream>
 #include "Fixed.hpp"
-#include "cmath"
 
 int main( void )
 {

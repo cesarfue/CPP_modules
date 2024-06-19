@@ -6,7 +6,7 @@
 #    By: cefuente <cefuente@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/14 12:54:18 by cefuente          #+#    #+#              #
-#    Updated: 2024/06/18 14:35:02 by cefuente         ###   ########.fr        #
+#    Updated: 2024/06/19 09:42:41 by cefuente         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ OBJS_DIR = objs/
 
 RM		= rm -r
 CC		=	c++
-FLAGS	=	-Wall -Wextra -Werror -std=c++98 -g -fPIE
+FLAGS	=	-Wall -Wextra -Werror -std=c++98 -g
 
 all			:	$(NAME)
 

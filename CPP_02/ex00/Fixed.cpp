@@ -6,7 +6,7 @@
 /*   By: cefuente <cefuente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 14:23:39 by cefuente          #+#    #+#             */
-/*   Updated: 2024/06/18 16:59:42 by cefuente         ###   ########.fr       */
+/*   Updated: 2024/06/19 09:42:16 by cefuente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,3 +50,4 @@ void	Fixed::setRawBits(int const raw)
 	std::cout << "setRawBits member function called" << std::endl;
 	_rawBits = raw;
 }
+
