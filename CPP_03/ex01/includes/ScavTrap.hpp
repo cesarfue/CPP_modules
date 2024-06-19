@@ -1,20 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cefuente <cefuente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/19 12:17:19 by cefuente          #+#    #+#             */
-/*   Updated: 2024/06/19 15:58:15 by cefuente         ###   ########.fr       */
+/*   Created: 2024/06/19 15:54:01 by cefuente          #+#    #+#             */
+/*   Updated: 2024/06/19 16:12:43 by cefuente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include <iostream>
+#include "ClapTrap.hpp"
 
-class ClapTrap {
+class ScavTrap : public ClapTrap
+{
 	private :
 		std::string	_name;
 		int	_hitPoints;
@@ -22,15 +23,19 @@ class ClapTrap {
 		int	_attackDamage;
 
 	public :
+
+		/* Self */
+		void	guardGate(void);
+		/* Inherited */
 		void	attack(const std::string& target);
 		void	takeDamage(unsigned int amount);
 		void 	beRepaired(unsigned int amount);
 
-		ClapTrap(std::string name);
-		ClapTrap(const ClapTrap &src);
-		ClapTrap(void);
-		~ClapTrap(void);
-		ClapTrap	&operator=(const ClapTrap &src);
+		ScavTrap(std::string name);
+		ScavTrap(const ScavTrap &src);
+		ScavTrap(void);
+		~ScavTrap(void);
+		ScavTrap	&operator=(const ScavTrap &src);
 
 		std::string	get_name(void) const;
 		void		set_name(const std::string name);
@@ -40,5 +45,5 @@ class ClapTrap {
 		void		set_energyPoints(const int energyPoints);
 		int			get_attackDamage(void) const;
 		void		set_attackDamage(const int attackDamage);
-
+	
 };
