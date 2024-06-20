@@ -6,7 +6,7 @@
 /*   By: cefuente <cefuente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 14:23:39 by cefuente          #+#    #+#             */
-/*   Updated: 2024/06/19 11:07:08 by cefuente         ###   ########.fr       */
+/*   Updated: 2024/06/20 11:04:13 by cefuente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ Fixed& Fixed::operator=(const Fixed &src)
 	return (*this);
 }
 
-
 int	Fixed::getRawBits(void) const
 {
 	std::cout << "getRawBits member function called" << std::endl;
@@ -50,4 +49,3 @@ void	Fixed::setRawBits(int const raw)
 	std::cout << "setRawBits member function called" << std::endl;
 	_rawBits = raw;
 }
-

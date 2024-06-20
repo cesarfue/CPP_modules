@@ -6,20 +6,23 @@
 #    By: cefuente <cefuente@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/14 12:54:18 by cefuente          #+#    #+#              #
-#    Updated: 2024/06/20 10:13:36 by cefuente         ###   ########.fr        #
+#    Updated: 2024/06/20 11:12:32 by cefuente         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME			=	wouf
 
 SRCS_DIR		=	srcs/
-SRCS			=	main.cpp 
+SRCS			=	main.cpp \
+					Animal.cpp \
+					Dog.cpp \
+					Cat.cpp 
 
 OBJS_DIR 		=	objs/
 OBJS			=	$(patsubst %.cpp, $(OBJS_DIR)%.o, $(SRCS))
 
 INCLUDES_DIR	=	includes/
-INCLUDES		=	$(INCLUDES_DIR)ClapTrap.hpp
+INCLUDES		=	$(INCLUDES_DIR)Animal.hpp $(INCLUDES_DIR)Dog.hpp $(INCLUDES_DIR)Cat.hpp
 
 RM				=	rm -r
 CC				=	c++
