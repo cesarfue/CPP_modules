@@ -6,7 +6,7 @@
 /*   By: cefuente <cefuente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 16:29:50 by cefuente          #+#    #+#             */
-/*   Updated: 2024/06/19 16:35:58 by cefuente         ###   ########.fr       */
+/*   Updated: 2024/06/20 10:31:07 by cefuente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,27 +23,15 @@ class FragTrap : public ClapTrap
 		int	_attackDamage;
 
 	public :
-
 		/* Self */
 		void	highFivesGuys(void);
 		/* Inherited */
 		void	attack(const std::string& target);
-		void	takeDamage(unsigned int amount);
-		void 	beRepaired(unsigned int amount);
 
 		FragTrap(std::string name);
 		FragTrap(const FragTrap &src);
 		FragTrap(void);
 		~FragTrap(void);
 		FragTrap	&operator=(const FragTrap &src);
-
-		std::string	get_name(void) const;
-		void		set_name(const std::string name);
-		int			get_hitPoints(void) const;
-		void		set_hitPoints(const int hitPoints);
-		int			get_energyPoints(void) const;
-		void		set_energyPoints(const int energyPoints);
-		int			get_attackDamage(void) const;
-		void		set_attackDamage(const int attackDamage);
 	
 };

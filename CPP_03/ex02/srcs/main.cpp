@@ -6,7 +6,7 @@
 /*   By: cefuente <cefuente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 12:17:46 by cefuente          #+#    #+#             */
-/*   Updated: 2024/06/20 10:05:41 by cefuente         ###   ########.fr       */
+/*   Updated: 2024/06/20 10:38:54 by cefuente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,9 +53,7 @@ int	main(void)
 	FragTrap Bloup("Bloup");
 
 	Bloup.attack("Blip");
-	Blip.takeDamage(Bloup.get_attackDamage());
 	Blip.attack("Bloup");
-	Bloup.takeDamage(Blip.get_attackDamage());
 	Bloup.highFivesGuys();
 	Blip.highFivesGuys();
 	return (0);

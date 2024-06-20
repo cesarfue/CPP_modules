@@ -6,7 +6,7 @@
 /*   By: cefuente <cefuente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 12:17:31 by cefuente          #+#    #+#             */
-/*   Updated: 2024/06/19 15:50:18 by cefuente         ###   ########.fr       */
+/*   Updated: 2024/06/20 10:34:51 by cefuente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@ void	ClapTrap::attack(const std::string &target)
 	if (this->_energyPoints > 0)
 	{
 		this->_energyPoints -= 1;
-		std::cout << "ClapTrap " << this->get_name() << " attacks " << target \
-		<< ", causing " << this->get_attackDamage() << " points of damage !" << std::endl;
+		std::cout << "ClapTrap " << this->_name << " attacks " << target \
+		<< ", causing " << this->_attackDamage << " points of damage !" << std::endl;
 	}
 	else
 	{
-		std::cout << "ClapTrap " << this->get_name() << " tries to attack but is too tired" << std::endl;
+		std::cout << "ClapTrap " << this->_name << " tries to attack but is too tired" << std::endl;
 	}
 }
 
@@ -32,9 +32,9 @@ void	ClapTrap::takeDamage(unsigned int amount)
 {
 	this->_hitPoints -= amount; 
 	if (this->_hitPoints > 0)
-		std::cout << "ClapTrap " << this->get_name() << " got hit and took " << amount << " points of damage" << std::endl;
+		std::cout << "ClapTrap " << this->_name << " got hit and took " << amount << " points of damage" << std::endl;
 	else
-		std::cout << "ClapTrap " << this->get_name() << " got hit by "  << amount << " points of damage and died" << std::endl;
+		std::cout << "ClapTrap " << this->_name << " got hit by "  << amount << " points of damage and died" << std::endl;
 
 }
 
@@ -44,11 +44,11 @@ void	ClapTrap::beRepaired(unsigned int amount)
 	{
 		this->_energyPoints -= 1;
 		this->_hitPoints += amount;
-		std::cout << "ClapTrap " << this->get_name() << " repaired itself and gained " << amount << " energy points back" << std::endl;
+		std::cout << "ClapTrap " << this->_name << " repaired itself and gained " << amount << " energy points back" << std::endl;
 	}
 	else 
 	{
-		std::cout << "ClapTrap " << this->get_name() << " tries to repair itself but is too tired" << std::endl;
+		std::cout << "ClapTrap " << this->_name << " tries to repair itself but is too tired" << std::endl;
 	}
 }
 

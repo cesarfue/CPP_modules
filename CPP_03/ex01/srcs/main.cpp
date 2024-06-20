@@ -6,7 +6,7 @@
 /*   By: cefuente <cefuente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 12:17:46 by cefuente          #+#    #+#             */
-/*   Updated: 2024/06/19 16:23:36 by cefuente         ###   ########.fr       */
+/*   Updated: 2024/06/20 10:38:06 by cefuente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,20 +33,18 @@ int	main(void)
 
 	std::cout << "\n\n" << std::endl; */
 
-	Zack.set_attackDamage(10);
-	Jack.set_attackDamage(10);
+	// Zack.set_attackDamage(10);
+	// Jack.set_attackDamage(10);
 
 	Bibop.guardGate();
 
 	Zack.attack("Bibop");
-	Bibop.takeDamage(Zack.get_attackDamage());
 	Jack.attack("Bibop");
-	Bibop.takeDamage(Jack.get_attackDamage());
 		
 	Bibop.attack("Zack");
-	Zack.takeDamage(Bibop.get_attackDamage());
+	Zack.takeDamage(20);
 	Bibop.attack("Jack");
-	Jack.takeDamage(Bibop.get_attackDamage());
+	Jack.takeDamage(20);
 
 	
 
