@@ -6,7 +6,7 @@
 /*   By: cefuente <cefuente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 16:30:22 by cefuente          #+#    #+#             */
-/*   Updated: 2024/06/19 17:13:10 by cefuente         ###   ########.fr       */
+/*   Updated: 2024/06/20 09:59:33 by cefuente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 void	FragTrap::highFivesGuys(void)
 {
-	std::cout << this->_name << " : Hey give me five\n*CLAAP*\n" << this->_name << " : Yeee that's my boy." << std::endl;	
+	std::cout << this->_name << " : Hey give me five\n*CLAP*\n" << this->_name << " : Yeee that's my boy." << std::endl;	
 }
 
 /* Claptraps members functions */

@@ -6,20 +6,20 @@
 /*   By: cefuente <cefuente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 12:17:46 by cefuente          #+#    #+#             */
-/*   Updated: 2024/06/19 16:23:36 by cefuente         ###   ########.fr       */
+/*   Updated: 2024/06/20 10:05:41 by cefuente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 int	main(void)
 {
-	ClapTrap Jack("Jack");
+/*	ClapTrap Jack("Jack");
 	ClapTrap Zack("Zack");
-	ScavTrap Bibop("Bibop");
 
-/* 	Jack.set_attackDamage(1);
+ 	Jack.set_attackDamage(1);
 	while (Jack.get_energyPoints() > 0)
 	{
 		Jack.attack("Zack");
@@ -33,6 +33,7 @@ int	main(void)
 
 	std::cout << "\n\n" << std::endl; */
 
+	/*
 	Zack.set_attackDamage(10);
 	Jack.set_attackDamage(10);
 
@@ -46,9 +47,16 @@ int	main(void)
 	Bibop.attack("Zack");
 	Zack.takeDamage(Bibop.get_attackDamage());
 	Bibop.attack("Jack");
-	Jack.takeDamage(Bibop.get_attackDamage());
+	Jack.takeDamage(Bibop.get_attackDamage()); */
 
-	
+ 	FragTrap Blip("Blip");
+	FragTrap Bloup("Bloup");
 
+	Bloup.attack("Blip");
+	Blip.takeDamage(Bloup.get_attackDamage());
+	Blip.attack("Bloup");
+	Bloup.takeDamage(Blip.get_attackDamage());
+	Bloup.highFivesGuys();
+	Blip.highFivesGuys();
 	return (0);
 }

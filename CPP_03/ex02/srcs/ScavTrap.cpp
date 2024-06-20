@@ -6,7 +6,7 @@
 /*   By: cefuente <cefuente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 15:54:18 by cefuente          #+#    #+#             */
-/*   Updated: 2024/06/19 16:18:02 by cefuente         ###   ########.fr       */
+/*   Updated: 2024/06/20 10:01:27 by cefuente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ void	ScavTrap::guardGate(void)
 {
 	std::cout << "ScavTrap " << this->_name << " is now in gatekeeper mode" << std::endl;
 }
-
-
 
 /* Claptraps members functions */
 

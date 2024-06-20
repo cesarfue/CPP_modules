@@ -6,7 +6,7 @@
 #    By: cefuente <cefuente@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/14 12:54:18 by cefuente          #+#    #+#              #
-#    Updated: 2024/06/19 16:26:23 by cefuente         ###   ########.fr        #
+#    Updated: 2024/06/20 10:06:25 by cefuente         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,13 +15,14 @@ NAME			=	claptrap
 SRCS_DIR		=	srcs/
 SRCS			=	main.cpp \
 					ClapTrap.cpp \
-					ScavTrap.cpp
+					ScavTrap.cpp \
+					FragTrap.cpp
 
 OBJS_DIR 		=	objs/
 OBJS			=	$(patsubst %.cpp, $(OBJS_DIR)%.o, $(SRCS))
 
 INCLUDES_DIR	=	includes/
-INCLUDES		=	$(INCLUDES_DIR)ClapTrap.hpp $(INCLUDES_DIR)ScavTrap.hpp
+INCLUDES		=	$(INCLUDES_DIR)ClapTrap.hpp $(INCLUDES_DIR)ScavTrap.hpp $(INCLUDES_DIR)FragTrap.hpp
 
 RM				=	rm -r
 CC				=	c++
