@@ -6,7 +6,7 @@
 /*   By: cefuente <cefuente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/20 11:27:56 by cefuente          #+#    #+#             */
-/*   Updated: 2024/06/20 11:37:16 by cefuente         ###   ########.fr       */
+/*   Updated: 2024/06/21 09:01:42 by cefuente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,7 @@ class Dog : public	Animal
 		std::string _type;
 
 	public : 
-		void MakeSound(void);
+		void makeSound(void) const;
 		Dog(void);
-		Dog(std::string type);
-		Dog(const Dog &src);
 		~Dog(void);
-		Dog		&operator=(const Dog &src);
 };

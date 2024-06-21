@@ -6,7 +6,7 @@
 /*   By: cefuente <cefuente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 14:15:09 by cefuente          #+#    #+#             */
-/*   Updated: 2024/06/19 12:32:56 by cefuente         ###   ########.fr       */
+/*   Updated: 2024/06/21 10:04:23 by cefuente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,6 @@ class	Fixed {
 
 		/* Overloading operators  */
 
-			/* Output stream  */
-		friend std::ostream	&operator<<(std::ostream&, Fixed const &fixed);
 			/* Copy assignment operator */
 		Fixed	&operator=(const Fixed &src);
 			/* Comparison operators */
@@ -73,3 +71,6 @@ class	Fixed {
 		static const Fixed	&max(const Fixed &a, const Fixed &b);
 
 };
+
+	/* Output stream  */
+std::ostream	&operator<<(std::ostream&, Fixed const &fixed);

@@ -6,7 +6,7 @@
 /*   By: cefuente <cefuente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 14:15:09 by cefuente          #+#    #+#             */
-/*   Updated: 2024/06/19 11:07:08 by cefuente         ###   ########.fr       */
+/*   Updated: 2024/06/21 10:03:07 by cefuente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ class	Fixed {
 
 		/* Overloading operators  */
 		Fixed	&operator=(const Fixed &src);
-		friend std::ostream	&operator<<(std::ostream&, Fixed const &fixed);
 
 		/* Getters / Setters */
 		int		getRawBits(void) const;
@@ -44,3 +43,5 @@ class	Fixed {
 		float	toFloat(void) const;
 		int		toInt(void) const;
 };
+
+std::ostream	&operator<<(std::ostream&, Fixed const &fixed);

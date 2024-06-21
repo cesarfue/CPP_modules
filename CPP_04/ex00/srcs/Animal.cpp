@@ -6,13 +6,18 @@
 /*   By: cefuente <cefuente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/20 11:17:17 by cefuente          #+#    #+#             */
-/*   Updated: 2024/06/20 11:27:37 by cefuente         ###   ########.fr       */
+/*   Updated: 2024/06/21 08:56:58 by cefuente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 
-Animal::Animal(void) : _type("")
+void	Animal::makeSound(void) const
+{
+	std::cout << "Animal->MakeSound called" << std::endl;
+}
+
+Animal::Animal(void) : _type("Animal")
 {
 	std::cout << "Animal default constructor called" << std::endl;
 }
@@ -44,7 +49,7 @@ Animal::~Animal(void)
 
 std::string Animal::getType(void) const
 {
-	return _type;
+	return this->_type;
 }
 
 void Animal::setType(const std::string type)

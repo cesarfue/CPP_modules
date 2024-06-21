@@ -1,32 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cefuente <cefuente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/20 11:13:08 by cefuente          #+#    #+#             */
-/*   Updated: 2024/06/21 09:59:04 by cefuente         ###   ########.fr       */
+/*   Created: 2024/06/21 10:11:58 by cefuente          #+#    #+#             */
+/*   Updated: 2024/06/21 10:18:08 by cefuente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "WrongCat.hpp"
 
-#include <iostream>
-
-class	Animal
+void	WrongCat::makeSound(void) const
 {
-	private :
-		std::string _type;
+	std::cout << "*BEEEH*" << std::endl;
+}
 
-	public :
-		virtual void makeSound(void) const;
-		Animal(void);
-		Animal(std::string type);
-		Animal(const Animal &src);
-		virtual ~Animal(void);
-		Animal		&operator=(const Animal &src);
+WrongCat::WrongCat(void) : WrongAnimal("WrongCat")
+{
+	std::cout << "WrongCat default constructor called" << std::endl;
+}
 
-		void		setType(std::string type);
-		std::string	getType(void) const;
-};
+WrongCat::~WrongCat(void)
+{
+	std::cout << "WrongCat destroyed" << std::endl;
+}

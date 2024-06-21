@@ -6,23 +6,26 @@
 #    By: cefuente <cefuente@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/14 12:54:18 by cefuente          #+#    #+#              #
-#    Updated: 2024/06/20 11:12:32 by cefuente         ###   ########.fr        #
+#    Updated: 2024/06/21 10:12:57 by cefuente         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME			=	wouf
+NAME			=	animalz
 
 SRCS_DIR		=	srcs/
 SRCS			=	main.cpp \
 					Animal.cpp \
 					Dog.cpp \
-					Cat.cpp 
+					Cat.cpp \
+					WrongAnimal.cpp \
+					WrongCat.cpp
 
 OBJS_DIR 		=	objs/
 OBJS			=	$(patsubst %.cpp, $(OBJS_DIR)%.o, $(SRCS))
 
 INCLUDES_DIR	=	includes/
-INCLUDES		=	$(INCLUDES_DIR)Animal.hpp $(INCLUDES_DIR)Dog.hpp $(INCLUDES_DIR)Cat.hpp
+INCLUDES		=	$(INCLUDES_DIR)Animal.hpp $(INCLUDES_DIR)Dog.hpp $(INCLUDES_DIR)Cat.hpp \
+					$(INCLUDES_DIR)WrongAnimal.hpp $(INCLUDES_DIR)WrongCat.hpp
 
 RM				=	rm -r
 CC				=	c++
