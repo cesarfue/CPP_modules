@@ -12,19 +12,14 @@
 
 #include "Dog.hpp"
 
-void	Dog::makeSound(void) const
-{
-	std::cout << "*WOUF*" << std::endl;
+void Dog::makeSound(void) const { std::cout << "*WOUF*" << std::endl; }
+
+Dog::Dog(void) : Animal("Dog") {
+  this->_brain = new Brain();
+  std::cout << "Dog default constructor called" << std::endl;
 }
 
-Dog::Dog(void) : Animal("Dog")
-{
-	this->_brain = new Brain();
-	std::cout << "Dog default constructor called" << std::endl;
-}
-
-Dog::~Dog(void)
-{
-	delete this->_brain;
-	std::cout << "Dog destroyed" << std::endl;
+Dog::~Dog(void) {
+  delete[] this->_brain;
+  std::cout << "Dog destroyed" << std::endl;
 }

@@ -13,14 +13,12 @@
 #pragma once
 #include <iostream>
 
-class	Brain
-{
-	private : 
-		std::string	_ideas[100];
+class Brain {
+private:
+  std::string _ideas[100];
 
-	public	:
-		Brain(void);
-		Brain(const Brain &src);
-		~Brain(void);
-		Brain& operator=(const Brain &src);
+public:
+  Brain(void);
+  Brain(const Brain &src);
+  Brain &operator=(const Brain &src);
 };

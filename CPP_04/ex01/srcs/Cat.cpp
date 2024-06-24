@@ -12,19 +12,14 @@
 
 #include "Cat.hpp"
 
-void	Cat::makeSound(void) const
-{
-	std::cout << "*MEOW*" << std::endl;
+void Cat::makeSound(void) const { std::cout << "*MEOW*" << std::endl; }
+
+Cat::Cat(void) : Animal("Cat") {
+  this->_brain = new Brain();
+  std::cout << "Cat default constructor called" << std::endl;
 }
 
-Cat::Cat(void) : Animal("Cat")
-{
-	this->_brain = new Brain();
-	std::cout << "Cat default constructor called" << std::endl;
-}
-
-Cat::~Cat(void)
-{
-	delete this->_brain;
-	std::cout << "Cat destroyed" << std::endl;
+Cat::~Cat(void) {
+  delete this->_brain;
+  std::cout << "Cat destroyed" << std::endl;
 }

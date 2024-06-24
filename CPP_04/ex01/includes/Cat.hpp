@@ -12,18 +12,17 @@
 
 #pragma once
 
+#include "Animal.hpp"
+#include "Brain.hpp"
 #include <iostream>
-#include <Animal.hpp>
-#include <Brain.hpp>
 
-class Cat : public	Animal
-{
-	private :
-		Brain	*_brain;
-		std::string _type;
+class Cat : public Animal {
+private:
+  Brain *_brain;
+  std::string _type;
 
-	public : 
-		void makeSound(void) const;
-		Cat(void);
-		~Cat(void);
+public:
+  void makeSound(void) const;
+  Cat(void);
+  ~Cat(void);
 };

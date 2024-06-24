@@ -12,47 +12,32 @@
 
 #include "Animal.hpp"
 
-void	Animal::makeSound(void) const
-{
-	std::cout << "Animal->MakeSound called" << std::endl;
+void Animal::makeSound(void) const {
+  std::cout << "Animal->MakeSound called" << std::endl;
 }
 
-Animal::Animal(void) : _type("Animal")
-{
-	std::cout << "Animal default constructor called" << std::endl;
+Animal::Animal(void) : _type("Animal") {
+  std::cout << "Animal default constructor called" << std::endl;
 }
 
-Animal::Animal(const std::string type) : _type(type)
-{
-	std::cout << "Animal default constructor called" << std::endl;
+Animal::Animal(const std::string type) : _type(type) {
+  std::cout << "Animal default constructor called" << std::endl;
 }
 
-Animal::Animal(const Animal &src) : _type(src._type)
-{
-	std::cout << "Animal copy constructor called" << std::endl;
+Animal::Animal(const Animal &src) : _type(src._type) {
+  std::cout << "Animal copy constructor called" << std::endl;
 }
 
-Animal	&Animal::operator=(const Animal &src)
-{
-	if (this != &src)
-	{
-		_type = src._type;
-	}
-	std::cout << "Animal copy constructor called" << std::endl;
-	return *this;
+Animal &Animal::operator=(const Animal &src) {
+  if (this != &src) {
+    _type = src._type;
+  }
+  std::cout << "Animal copy constructor called" << std::endl;
+  return *this;
 }
 
-Animal::~Animal(void)
-{
-	std::cout << "Animal destroyed" << std::endl;
-}
+Animal::~Animal(void) { std::cout << "Animal destroyed" << std::endl; }
 
-std::string Animal::getType(void) const
-{
-	return this->_type;
-}
+std::string Animal::getType(void) const { return this->_type; }
 
-void Animal::setType(const std::string type)
-{
-	_type = type;
-}
+void Animal::setType(const std::string type) { _type = type; }
