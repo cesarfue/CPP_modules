@@ -14,25 +14,16 @@
 
 #include "ClapTrap.hpp"
 
-class ScavTrap : public ClapTrap
-{
-	private :
-		std::string	_name;
-		int	_hitPoints;
-		int	_energyPoints;
-		int	_attackDamage;
+class ScavTrap : public ClapTrap {
+public:
+  /* Self */
+  void guardGate(void);
+  /* Inherited */
+  void attack(const std::string &target);
 
-	public :
-
-		/* Self */
-		void	guardGate(void);
-		/* Inherited */
-		void	attack(const std::string& target);
-
-		ScavTrap(std::string name);
-		ScavTrap(const ScavTrap &src);
-		ScavTrap(void);
-		~ScavTrap(void);
-		ScavTrap	&operator=(const ScavTrap &src);
-	
+  ScavTrap(std::string name);
+  ScavTrap(const ScavTrap &src);
+  ScavTrap(void);
+  ~ScavTrap(void);
+  ScavTrap &operator=(const ScavTrap &src);
 };

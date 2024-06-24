@@ -14,24 +14,16 @@
 
 #include "ClapTrap.hpp"
 
-class FragTrap : public ClapTrap
-{
-	private :
-		std::string	_name;
-		int	_hitPoints;
-		int	_energyPoints;
-		int	_attackDamage;
+class FragTrap : public ClapTrap {
+public:
+  /* Self */
+  void highFivesGuys(void);
+  /* Inherited */
+  void attack(const std::string &target);
 
-	public :
-		/* Self */
-		void	highFivesGuys(void);
-		/* Inherited */
-		void	attack(const std::string& target);
-
-		FragTrap(std::string name);
-		FragTrap(const FragTrap &src);
-		FragTrap(void);
-		~FragTrap(void);
-		FragTrap	&operator=(const FragTrap &src);
-	
+  FragTrap(std::string name);
+  FragTrap(const FragTrap &src);
+  FragTrap(void);
+  ~FragTrap(void);
+  FragTrap &operator=(const FragTrap &src);
 };
