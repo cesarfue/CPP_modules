@@ -9,13 +9,33 @@
 /*   Updated: 2024/06/21 10:18:08 by cefuente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "WrongCat.hpp"
 
-void WrongCat::makeSound(void) const { std::cout << "*BEEEH*" << std::endl; }
-
-WrongCat::WrongCat(void) : WrongAnimal("WrongCat") {
-  std::cout << "WrongCat default constructor called" << std::endl;
+WrongCat::WrongCat() {
+  _brain = new Brain();
+  _type = "WrongCat";
+  std::cout << "WrongCat created" << std::endl;
 }
 
-WrongCat::~WrongCat(void) { std::cout << "WrongCat destroyed" << std::endl; }
+WrongCat::WrongCat(const WrongCat &src) : WrongAnimal(src) {
+  _brain = new Brain(*src._brain);
+  _type = src._type;
+  std::cout << "WrongCat copied" << std::endl;
+}
+
+WrongCat &WrongCat::operator=(const WrongCat &src) {
+  if (this != &src) {
+    delete _brain;
+    _brain = new Brain(*src._brain);
+    _type = src._type;
+  }
+  std::cout << "WrongCat assigned" << std::endl;
+  return *this;
+}
+
+WrongCat::~WrongCat() {
+  delete _brain;
+  std::cout << "WrongCat destroyed" << std::endl;
+}
+
+void WrongCat::makeSound() const { std::cout << "BEEHH!" << std::endl; }

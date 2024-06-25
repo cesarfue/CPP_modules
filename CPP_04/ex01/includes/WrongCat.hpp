@@ -12,15 +12,19 @@
 
 #pragma once
 
+#include "Brain.hpp"
 #include "WrongAnimal.hpp"
 #include <iostream>
 
 class WrongCat : public WrongAnimal {
 private:
+  Brain *_brain;
   std::string _type;
 
 public:
   void makeSound(void) const;
   WrongCat(void);
+  WrongCat(const WrongCat &src);
+  WrongCat &operator=(const WrongCat &src);
   ~WrongCat(void);
 };

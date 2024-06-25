@@ -12,14 +12,31 @@
 
 #include "Cat.hpp"
 
-void Cat::makeSound(void) const { std::cout << "*MEOW*" << std::endl; }
-
-Cat::Cat(void) : Animal("Cat") {
-  this->_brain = new Brain();
-  std::cout << "Cat default constructor called" << std::endl;
+Cat::Cat() {
+  _brain = new Brain();
+  _type = "Cat";
+  std::cout << "Cat created" << std::endl;
 }
 
-Cat::~Cat(void) {
-  delete this->_brain;
+Cat::Cat(const Cat &src) : Animal(src) {
+  _brain = new Brain(*src._brain);
+  _type = src._type;
+  std::cout << "Cat copied" << std::endl;
+}
+
+Cat &Cat::operator=(const Cat &src) {
+  if (this != &src) {
+    delete _brain;
+    _brain = new Brain(*src._brain);
+    _type = src._type;
+  }
+  std::cout << "Cat assigned" << std::endl;
+  return *this;
+}
+
+Cat::~Cat() {
+  delete _brain;
   std::cout << "Cat destroyed" << std::endl;
 }
+
+void Cat::makeSound() const { std::cout << "Meow!" << std::endl; }

@@ -13,51 +13,28 @@
 #include "Animal.hpp"
 #include "Cat.hpp"
 #include "Dog.hpp"
+#include "WrongAnimal.hpp"
+#include "WrongCat.hpp"
 
 int main() {
-  /* 	std::cout << "_________Animalz________\n" << std::endl;
-          const Animal* meta = new Animal();
-          const Animal* j = new Dog();
-          const Animal* i = new Cat();
+  Animal *animals[8];
 
-          std::cout << "\nJ->type is " << j->getType() << " " << std::endl;
-          std::cout << "I->type is " << i->getType() << " \n" << std::endl;
-
-          i->makeSound(); //will output the cat sound!
-          j->makeSound();
-          meta->makeSound();
-          std::cout << std::endl;
-
-          delete meta;
-          delete j;
-          delete i;
-
-          std::cout << std::endl << "________ Wrong Animalz ________\n" <<
-     std::endl;
-
-      const WrongAnimal *wrong = new WrongAnimal();
-      const WrongAnimal *wrongCat = new WrongCat();
-
-      std::cout << "\nWrong Type: " << wrong->getType() << " " << std::endl;
-      std::cout << "WrongCat Type: " << wrongCat->getType() << " \n" <<
-     std::endl; wrong->makeSound(); wrongCat->makeSound(); std::cout <<
-     std::endl;
-
-      delete  wrong;
-      delete  wrongCat; */
-
-  const Animal *j = new Dog();
-  const Animal *i = new Cat();
-
-  Dog basic;
-  { Dog tmp = basic; }
-
-  const Animal *animals[4] = {new Dog(), new Dog(), new Cat(), new Cat()};
-  for (int i = 0; i < 4; i++) {
-    delete animals[i];
+  for (int i = 0; i < 2; ++i) {
+    animals[i] = new Dog();
   }
 
-  delete j;
-  delete i;
+  for (int i = 2; i < 4; ++i) {
+    animals[i] = new Cat();
+  }
+
+  WrongAnimal wrongAnimal;
+
+  wrongAnimal = new WrongCat();
+
+  wrongAnimal.makeSound();
+
+  delete animals[];
+  delete wrongAnimal;
+
   return 0;
 }

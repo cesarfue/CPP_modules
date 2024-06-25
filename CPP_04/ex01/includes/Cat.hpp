@@ -24,5 +24,7 @@ private:
 public:
   void makeSound(void) const;
   Cat(void);
+  Cat(const Cat &src);
+  Cat &operator=(const Cat &src);
   ~Cat(void);
 };
