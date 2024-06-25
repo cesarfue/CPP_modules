@@ -50,7 +50,7 @@ FragTrap::FragTrap(void) {
   std::cout << "FragTrap default constructor called" << std::endl;
 }
 
-FragTrap::FragTrap(const FragTrap &src) {
+FragTrap::FragTrap(const FragTrap &src) : ClapTrap(src) {
   _name = src._name;
   _energyPoints = src._energyPoints;
   _hitPoints = src._hitPoints;

@@ -51,7 +51,7 @@ ScavTrap::ScavTrap(void) {
   std::cout << "ScavTrap default constructor called" << std::endl;
 }
 
-ScavTrap::ScavTrap(const ScavTrap &src) {
+ScavTrap::ScavTrap(const ScavTrap &src) : ClapTrap(src) {
   _name = src._name;
   _hitPoints = src._hitPoints;
   _energyPoints = src._energyPoints;
