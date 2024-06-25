@@ -12,16 +12,15 @@
 
 #pragma once
 
-#include <iostream>
 #include <Animal.hpp>
+#include <iostream>
 
-class Cat : public	Animal
-{
-	private :
-		std::string _type;
-
-	public : 
-		void makeSound(void) const;
-		Cat(void);
-		~Cat(void);
+class Cat : public Animal {
+private:
+public:
+  void makeSound(void) const;
+  Cat(void);
+  Cat(const Cat &src);
+  Cat &operator=(const Cat &src);
+  ~Cat(void);
 };

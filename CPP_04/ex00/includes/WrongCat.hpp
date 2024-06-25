@@ -12,16 +12,15 @@
 
 #pragma once
 
-#include <iostream>
 #include <WrongAnimal.hpp>
+#include <iostream>
 
-class WrongCat : public	WrongAnimal
-{
-	private :
-		std::string _type;
-
-	public : 
-		void makeSound(void) const;
-		WrongCat(void);
-		~WrongCat(void);
+class WrongCat : public WrongAnimal {
+private:
+public:
+  void makeSound(void) const;
+  WrongCat(void);
+  WrongCat(const WrongCat &src);
+  WrongCat &operator=(const WrongCat &src);
+  ~WrongCat(void);
 };

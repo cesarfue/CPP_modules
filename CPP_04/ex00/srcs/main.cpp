@@ -10,42 +10,34 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
 #include "Cat.hpp"
+#include "Dog.hpp"
 
 #include "WrongCat.hpp"
 
-int main()
-{
-	std::cout << "_________Animalz________\n" << std::endl;
-	const Animal* meta = new Animal();
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
-	
-	std::cout << "\nJ->type is " << j->getType() << " " << std::endl;
-	std::cout << "I->type is " << i->getType() << " \n" << std::endl;
+int main() {
+  std::cout << "_________Animalz________\n" << std::endl;
+  const Animal *Jack = new Dog();
+  const Animal *Bill = new Cat();
 
-	i->makeSound(); //will output the cat sound!
-	j->makeSound();
-	meta->makeSound();
-	std::cout << std::endl;
+  std::cout << "\nJ->type is " << Jack->getType() << " " << std::endl;
+  std::cout << "I->type is " << Bill->getType() << " \n" << std::endl;
 
-	delete meta;
-	delete j;
-	delete i;
+  Bill->makeSound();
+  Jack->makeSound();
+  std::cout << std::endl;
 
-	std::cout << std::endl << "________ Wrong Animalz ________\n" << std::endl;
+  delete Jack;
+  delete Bill;
 
-    const WrongAnimal *wrong = new WrongAnimal();
-    const WrongAnimal *wrongCat = new WrongCat();	
+  std::cout << std::endl << "________ Wrong Animalz ________\n" << std::endl;
 
-    std::cout << "\nWrong Type: " << wrong->getType() << " " << std::endl;
-    std::cout << "WrongCat Type: " << wrongCat->getType() << " \n" << std::endl;
-    wrong->makeSound();
-    wrongCat->makeSound();
-	std::cout << std::endl;
+  const WrongAnimal *wrongCat = new WrongCat();
 
-    delete  wrong;
-    delete  wrongCat;
-	return 0;
+  std::cout << "WrongCat Type: " << wrongCat->getType() << " \n" << std::endl;
+  wrongCat->makeSound();
+  std::cout << std::endl;
+
+  delete wrongCat;
+  return 0;
 }

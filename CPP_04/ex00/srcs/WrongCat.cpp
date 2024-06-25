@@ -11,18 +11,25 @@
 /* ************************************************************************** */
 
 #include "WrongCat.hpp"
+#include "WrongAnimal.hpp"
 
-void	WrongCat::makeSound(void) const
-{
-	std::cout << "*BEEEH*" << std::endl;
+void WrongCat::makeSound(void) const { std::cout << "*BEEEH*" << std::endl; }
+
+WrongCat::WrongCat(void) : WrongAnimal() {
+  this->_type = "WrongCat";
+  std::cout << "WrongCat default constructor called" << std::endl;
 }
 
-WrongCat::WrongCat(void) : WrongAnimal("WrongCat")
-{
-	std::cout << "WrongCat default constructor called" << std::endl;
+WrongCat::WrongCat(const WrongCat &src) : WrongAnimal(src) {
+  std::cout << "WrongCat copy constructor called" << std::endl;
 }
 
-WrongCat::~WrongCat(void)
-{
-	std::cout << "WrongCat destroyed" << std::endl;
+WrongCat &WrongCat::operator=(const WrongCat &src) {
+  if (this != &src) {
+    this->_type = src._type;
+  }
+  std::cout << "WrongCat assignment operator called" << std::endl;
+  return *this;
 }
+
+WrongCat::~WrongCat(void) { std::cout << "WrongCat destroyed" << std::endl; }

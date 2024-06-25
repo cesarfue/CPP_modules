@@ -14,19 +14,18 @@
 
 #include <iostream>
 
-class	Animal
-{
-	private :
-		std::string _type;
+class Animal {
+protected:
+  std::string _type;
 
-	public :
-		virtual void makeSound(void) const;
-		Animal(void);
-		Animal(std::string type);
-		Animal(const Animal &src);
-		virtual ~Animal(void);
-		Animal		&operator=(const Animal &src);
+public:
+  virtual void makeSound(void) const;
+  Animal(void);
+  Animal(std::string type);
+  Animal(const Animal &src);
+  virtual ~Animal(void);
+  Animal &operator=(const Animal &src);
 
-		void		setType(std::string type);
-		std::string	getType(void) const;
+  void setType(std::string type);
+  std::string getType(void) const;
 };
