@@ -12,21 +12,19 @@
 
 #include "ClapTrap.hpp"
 
-int	main(void)
-{
-	ClapTrap Jack("Jack");
-	ClapTrap Zack("Zack");
+int main(void) {
+  ClapTrap Jack("Jack");
+  ClapTrap Zack("Zack");
 
-	Jack.set_attackDamage(1);
-	while (Jack.get_energyPoints() > 0)
-	{
-		Jack.attack("Zack");
-		Zack.takeDamage(Jack.get_attackDamage());
-		Zack.beRepaired(1);
-	}
-	Zack.set_energyPoints(10);
-	Zack.set_attackDamage(100000);
-	Zack.attack("Jack");
-	Jack.takeDamage(Zack.get_attackDamage());
-	return (0);
+  Jack.set_attackDamage(1);
+  while (Jack.get_energyPoints() > 0) {
+    Jack.attack("Zack");
+    Zack.takeDamage(Jack.get_attackDamage());
+    Zack.beRepaired(1);
+  }
+  Zack.set_energyPoints(10);
+  Zack.set_attackDamage(100000);
+  Zack.attack("Jack");
+  Jack.takeDamage(Zack.get_attackDamage());
+  return (0);
 }
