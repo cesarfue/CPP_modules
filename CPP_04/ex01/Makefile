@@ -40,7 +40,7 @@ $(NAME)			:	$(OBJS) Makefile
 
 ${OBJS_DIR}%.o	: ${SRCS_DIR}%.cpp $(INCLUDES)
 	@mkdir -p $(dir $@)
-	@echo "\033[1;32mCompiling [$<]\033m"
+	@echo "\033[1;37mCompiling [$<]\033m"
 	@$(CC) $(FLAGS) -I$(INCLUDES_DIR) -c $< -o $@
 
 $(INCLUDES_DIR)	:
