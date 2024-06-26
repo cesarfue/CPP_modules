@@ -13,11 +13,11 @@
 NAME			=	animalz
 
 SRCS_DIR		=	srcs/
-SRCS			=	main.cpp \
-					AMateria.cpp \
+SRCS			=	AMateria.cpp \
 					Character.cpp \
 					Cure.cpp \
 					Ice.cpp \
+					MateriaSource.cpp \
 					main.cpp
 
 OBJS_DIR 		=	objs/
@@ -25,7 +25,8 @@ OBJS			=	$(patsubst %.cpp, $(OBJS_DIR)%.o, $(SRCS))
 
 INCLUDES_DIR	=	includes/
 INCLUDES		=	$(INCLUDES_DIR)AMateria.hpp $(INCLUDES_DIR)Character.hpp $(INCLUDES_DIR)Cure.hpp \
-					$(INCLUDES_DIR)ICharacter.hpp $(INCLUDES_DIR)Ice.hpp
+					$(INCLUDES_DIR)ICharacter.hpp $(INCLUDES_DIR)Ice.hpp $(INCLUDES_DIR)IMateriaSource.hpp \
+					$(INCLUDES_DIR)MateriaSource.hpp
 
 RM				=	rm -r
 CC				=	c++

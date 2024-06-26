@@ -1,6 +1,13 @@
 #include "AMateria.hpp"
 #include <iostream>
 
+AMateria *AMateria::clone() const { return (AMateria *)this; }
+
+void AMateria::use(ICharacter &target) {
+  std::cout << "AMateria " << this->_type << " used on " << target.getName()
+            << std::endl;
+}
+
 AMateria::AMateria(void) : _type("") {
   std::cout << "AMateria default constructor called" << std::endl;
 }
@@ -22,3 +29,5 @@ AMateria &AMateria::operator=(const AMateria &src) {
 }
 
 AMateria::~AMateria(void) { std::cout << "AMateria destroyed" << std::endl; }
+
+std::string const &AMateria::getType(void) const { return this->_type; }
