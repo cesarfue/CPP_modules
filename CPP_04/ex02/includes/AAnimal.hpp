@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AAnimal.hpp                                         :+:      :+:    :+:   */
+/*   AAnimal.hpp                                         :+:      :+:    :+: */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cefuente <cefuente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -14,19 +14,18 @@
 
 #include <iostream>
 
-class	AAnimal
-{
-	private :
-		std::string _type;
+class AAnimal {
+protected:
+  std::string _type;
 
-	public :
-		virtual void makeSound(void) const;
-		AAnimal(void);
-		AAnimal(std::string type);
-		AAnimal(const AAnimal &src);
-		virtual ~AAnimal(void);
-		AAnimal		&operator=(const AAnimal &src);
+public:
+  virtual void makeSound(void) const = 0;
+  AAnimal(void);
+  AAnimal(std::string type);
+  AAnimal(const AAnimal &src);
+  virtual ~AAnimal(void);
+  AAnimal &operator=(const AAnimal &src);
 
-		void		setType(std::string type);
-		std::string	getType(void) const;
+  void setType(std::string type);
+  std::string getType(void) const;
 };

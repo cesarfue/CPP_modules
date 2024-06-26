@@ -12,11 +12,11 @@
 
 #include "AAnimal.hpp"
 
-void AAnimal::makeSound(void) const {
-  std::cout << "AAnimal->MakeSound called" << std::endl;
-}
+// void AAnimal::makeSound(void) const {
+// std::cout << "AAnimal->MakeSound called" << std::endl;
+// }
 
-AAnimal::AAnimal(void) : _type("AAnimal") {
+AAnimal::AAnimal(void) : _type("") {
   std::cout << "AAnimal default constructor called" << std::endl;
 }
 

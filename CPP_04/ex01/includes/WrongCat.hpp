@@ -19,7 +19,6 @@
 class WrongCat : public WrongAnimal {
 private:
   Brain *_brain;
-  std::string _type;
 
 public:
   void makeSound(void) const;

@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAAnimal.cpp                                    :+:      :+:    :+:   */
+/*   WrongAAnimal.cpp                                    :+:      :+:    :+: */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cefuente <cefuente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,11 +12,11 @@
 
 #include "WrongAAnimal.hpp"
 
-void WrongAAnimal::makeSound(void) const {
+/* void WrongAAnimal::makeSound(void) const {
   std::cout << "WrongAAnimal->MakeSound called" << std::endl;
-}
+}*/
 
-WrongAAnimal::WrongAAnimal(void) : _type("WrongAAnimal") {
+WrongAAnimal::WrongAAnimal(void) : _type("") {
   std::cout << "WrongAAnimal default constructor called" << std::endl;
 }
 

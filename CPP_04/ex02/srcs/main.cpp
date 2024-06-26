@@ -17,17 +17,22 @@
 int main(void) {
   const AAnimal *j = new Dog();
   const AAnimal *i = new Cat();
-
-  delete j; // should not create a leak
+  delete j;
   delete i;
 
-  Dog basic;
-  { Dog tmp = basic; }
-
+  std::cout << "\n___________\n" << std::endl;
   const AAnimal *AAnimals[4] = {new Dog(), new Dog(), new Cat(), new Cat()};
+  for (int i = 0; i < 4; i++) {
+    AAnimals[i]->makeSound();
+  }
   for (int i = 0; i < 4; i++) {
     delete AAnimals[i];
   }
 
+  std::cout << "\n___________\n" << std::endl;
+  const Dog *doggy = new Dog();
+
+  doggy->makeSound();
+  delete doggy;
   return 0;
 }

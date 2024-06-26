@@ -19,7 +19,6 @@
 class Dog : public AAnimal {
 private:
   Brain *_brain;
-  std::string _type;
 
 public:
   void makeSound(void) const;
