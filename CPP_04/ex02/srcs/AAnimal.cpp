@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   AAnimal.cpp                                         :+:      :+:    :+: */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cefuente <cefuente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,30 +10,34 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 
-void Animal::makeSound(void) const {
-  std::cout << "Animal->MakeSound called" << std::endl;
+void AAnimal::makeSound(void) const {
+  std::cout << "AAnimal->MakeSound called" << std::endl;
 }
 
-Animal::Animal(void) : _type("") {
-  std::cout << "Animal default constructor called" << std::endl;
+AAnimal::AAnimal(void) : _type("AAnimal") {
+  std::cout << "AAnimal default constructor called" << std::endl;
 }
 
-Animal::Animal(const Animal &src) : _type(src._type) {
-  std::cout << "Animal copy constructor called" << std::endl;
+AAnimal::AAnimal(const std::string type) : _type(type) {
+  std::cout << "AAnimal default constructor called" << std::endl;
 }
 
-Animal &Animal::operator=(const Animal &src) {
+AAnimal::AAnimal(const AAnimal &src) : _type(src._type) {
+  std::cout << "AAnimal copy constructor called" << std::endl;
+}
+
+AAnimal &AAnimal::operator=(const AAnimal &src) {
   if (this != &src) {
     _type = src._type;
   }
-  std::cout << "Animal copy constructor called" << std::endl;
+  std::cout << "AAnimal copy constructor called" << std::endl;
   return *this;
 }
 
-Animal::~Animal(void) { std::cout << "Animal destroyed" << std::endl; }
+AAnimal::~AAnimal(void) { std::cout << "AAnimal destroyed" << std::endl; }
 
-std::string Animal::getType(void) const { return this->_type; }
+std::string AAnimal::getType(void) const { return this->_type; }
 
-void Animal::setType(const std::string type) { _type = type; }
+void AAnimal::setType(const std::string type) { _type = type; }

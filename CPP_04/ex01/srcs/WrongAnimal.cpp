@@ -16,7 +16,7 @@ void WrongAnimal::makeSound(void) const {
   std::cout << "WrongAnimal->MakeSound called" << std::endl;
 }
 
-WrongAnimal::WrongAnimal(void) : _type("WrongAnimal") {
+WrongAnimal::WrongAnimal(void) : _type("") {
   std::cout << "WrongAnimal default constructor called" << std::endl;
 }
 

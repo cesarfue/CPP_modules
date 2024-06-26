@@ -1,31 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cefuente <cefuente@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/20 11:13:08 by cefuente          #+#    #+#             */
-/*   Updated: 2024/06/21 09:59:04 by cefuente         ###   ########.fr       */
+/*   Created: 2024/06/20 11:12:38 by cefuente          #+#    #+#             */
+/*   Updated: 2024/06/21 16:29:21 by cefuente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "AAnimal.hpp"
+#include "Cat.hpp"
+#include "Dog.hpp"
 
-#include <iostream>
+int main(void) {
+  const AAnimal *j = new Dog();
+  const AAnimal *i = new Cat();
 
-class Animal {
-protected:
-  std::string _type;
+  delete j; // should not create a leak
+  delete i;
 
-public:
-  virtual void makeSound(void) const;
-  Animal(void);
-  Animal(std::string type);
-  Animal(const Animal &src);
-  virtual ~Animal(void);
-  Animal &operator=(const Animal &src);
+  Dog basic;
+  { Dog tmp = basic; }
 
-  void setType(std::string type);
-  std::string getType(void) const;
-};
+  const AAnimal *AAnimals[4] = {new Dog(), new Dog(), new Cat(), new Cat()};
+  for (int i = 0; i < 4; i++) {
+    delete AAnimals[i];
+  }
+
+  return 0;
+}
