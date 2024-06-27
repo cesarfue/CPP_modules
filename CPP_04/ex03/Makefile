@@ -18,6 +18,7 @@ SRCS			=	AMateria.cpp \
 					Cure.cpp \
 					Ice.cpp \
 					MateriaSource.cpp \
+					GarbageMan.cpp \
 					main.cpp
 
 OBJS_DIR 		=	objs/
@@ -26,7 +27,7 @@ OBJS			=	$(patsubst %.cpp, $(OBJS_DIR)%.o, $(SRCS))
 INCLUDES_DIR	=	includes/
 INCLUDES		=	$(INCLUDES_DIR)AMateria.hpp $(INCLUDES_DIR)Character.hpp $(INCLUDES_DIR)Cure.hpp \
 					$(INCLUDES_DIR)ICharacter.hpp $(INCLUDES_DIR)Ice.hpp $(INCLUDES_DIR)IMateriaSource.hpp \
-					$(INCLUDES_DIR)MateriaSource.hpp
+					$(INCLUDES_DIR)MateriaSource.hpp $(INCLUDES_DIR)GarbageMan.hpp
 
 RM				=	rm -r
 CC				=	c++

@@ -1,4 +1,5 @@
 #include "Character.hpp"
+#include "GarbageMan.hpp"
 
 void Character::equip(AMateria *m) {
   for (int i = 0; i < 4; i++) {
