@@ -2,9 +2,10 @@
 
 void Character::equip(AMateria *m) {
   for (int i = 0; i < 4; i++) {
-    if (this->_inventory[i] == NULL)
+    if (this->_inventory[i] == NULL) {
       this->_inventory[i] = m;
-    return;
+      return;
+    }
   }
   std::cout << this->getName()
             << " doesn't have any space left in his inventory" << std::endl;
@@ -56,6 +57,7 @@ Character::Character(const Character &src) : _name(src._name) {
 Character &Character::operator=(const Character &src) {
   if (this != &src) {
     for (int i = 0; i < 4; i++) {
+      delete this->_inventory[i];
       this->_inventory[i] = src._inventory[i];
     }
     _name = src._name;
