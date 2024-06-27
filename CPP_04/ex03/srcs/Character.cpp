@@ -49,6 +49,7 @@ Character::Character(const std::string &name) : _name(name) {
 
 Character::Character(const Character &src) : _name(src._name) {
   for (int i = 0; i < 4; i++) {
+    delete this->_inventory[i];
     this->_inventory[i] = src._inventory[i];
   }
   // std::cout << "Character copy constructor called" << std::endl;
