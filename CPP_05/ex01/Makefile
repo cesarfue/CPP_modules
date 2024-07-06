@@ -15,13 +15,14 @@ NAME			=	bureaucratss
 SRCS_DIR		=	srcs/
 
 SRCS			=	main.cpp \
-						Bureaucrat.cpp
+						Bureaucrat.cpp \
+						Form.cpp
 
 OBJS_DIR 		=	objs/
 OBJS			=	$(patsubst %.cpp, $(OBJS_DIR)%.o, $(SRCS))
 
 INCLUDES_DIR	=	includes/
-INCLUDES		=	$(INCLUDES_DIR)Bureaucrat.hpp
+INCLUDES		=	$(INCLUDES_DIR)Bureaucrat.hpp $(INCLUDES_DIR)Form.hpp 
 
 RM				=	rm -r
 CC				=	c++

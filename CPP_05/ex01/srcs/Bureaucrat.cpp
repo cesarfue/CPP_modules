@@ -1,5 +1,7 @@
 #include "Bureaucrat.hpp"
 
+void Bureaucrat::signForm(Form &form) { form.beSigned(*this); }
+
 void Bureaucrat::incrementGrade() { this->setGrade(this->_grade - 1); }
 
 void Bureaucrat::decrementGrade() { this->setGrade(this->_grade + 1); }
