@@ -1,23 +1,40 @@
+#include "AForm.hpp"
 #include "Bureaucrat.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequest.hpp"
+#include "ShrubberyCreationForm.hpp"
 #include <cstdlib>
 
 int main(void) {
   try {
 
-    Form FormA("DestroyEvilPotatoes", 40, 5);
-    Form FormB("DestroyEvilHumans", 40, 5);
-    Bureaucrat bureaucrat2("Bloup the weirdo", 150);
-    Bureaucrat bureaucrat1("Bobby the boss", 1);
-    std::cout << FormA << std::endl;
+    Bureaucrat boss("Mr Boss", 2);
+    Bureaucrat secretary("Mr Secretary", 25);
 
-    FormA.beSigned(bureaucrat1);
-    FormA.beSigned(bureaucrat1);
-    FormA.beSigned(bureaucrat2);
+    AForm *robotomy = new RobotomyRequest("badGuy");
+    robotomy->beSigned(secretary);
+    robotomy->execute(boss);
+    delete robotomy;
 
-  } catch (Form::GradeTooHighException &e) {
+    std::cout << "\n" << std::endl;
+
+    AForm *pardon = new PresidentialPardonForm("badGuy");
+    pardon->beSigned(secretary);
+    pardon->execute(boss);
+    delete pardon;
+
+    std::cout << "\n" << std::endl;
+
+    AForm *shrubbery = new ShrubberyCreationForm("badGuyGarden");
+    shrubbery->beSigned(secretary);
+    shrubbery->execute(boss);
+    delete shrubbery;
+
+  } catch (AForm::GradeTooHighException &e) {
     std::cout << e.what() << std::endl;
-  } catch (Form::GradeTooLowException &e) {
+  } catch (AForm::GradeTooLowException &e) {
     std::cout << e.what() << std::endl;
   }
+
   return EXIT_SUCCESS;
 }

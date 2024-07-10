@@ -1,7 +1,7 @@
 #include "AForm.hpp"
 
-void AForm::beSigned(Bureaucrat &bureaucrat) {
-  if (bureaucrat.getGrade() > this->getSignatureGrade())
+void AForm::beSigned(Bureaucrat &signer) {
+  if (signer.getGrade() > this->getSignatureGrade())
     throw AForm::GradeTooLowException();
   else if (this->_signed == true)
     std::cout << "AForm " << this->getName() << " is already signed"
@@ -9,7 +9,7 @@ void AForm::beSigned(Bureaucrat &bureaucrat) {
   else {
     this->_signed = true;
     std::cout << "AForm " << this->getName() << " was signed by "
-              << bureaucrat.getName() << std::endl;
+              << signer.getName() << std::endl;
   }
 }
 

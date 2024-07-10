@@ -13,14 +13,15 @@ private:
   const int _executeGrade;
 
 public:
-  virtual void beSigned(Bureaucrat &) = 0;
+  void beSigned(Bureaucrat &signer);
+  virtual void execute(Bureaucrat &executer) = 0;
+
   AForm();
   AForm(const std::string name, const int signatureGrade,
         const int executeGrade);
   virtual ~AForm();
   AForm &operator=(const AForm &);
   AForm(const AForm &);
-
   std::string getName() const;
   int getSignatureGrade() const;
   int getExecuteGrade() const;

@@ -1,74 +1,48 @@
 #include "ShrubberyCreationForm.hpp"
 
-// void ShrubberyCreationForm.hpp::beSigned(Bureaucrat &bureaucrat) {
-//   if (bureaucrat.getGrade() > this->getSignatureGrade())
-//     throw ShrubberyCreationForm.hpp::GradeTooLowException();
-//   else if (this->_signed == true)
-//     std::cout << "ShrubberyCreationForm.hpp " << this->getName() << " is
-//     already signed"
-//               << std::endl;
-//   else {
-//     this->_signed = true;
-//     std::cout << "ShrubberyCreationForm.hpp " << this->getName() << " was
-//     signed by "
-//               << bureaucrat.getName() << std::endl;
-//   }
-// }
-
-ShrubberyCreationForm.hpp::ShrubberyCreationForm.hpp(const std::string name,
-                                                     const int signatureGrade,
-                                                     const int executeGrade)
-    : _name(name),
-_signatureGrade(signatureGrade), _executeGrade(executeGrade) {
-  if (signatureGrade > 150 || executeGrade > 150)
-    throw ShrubberyCreationForm.hpp::GradeTooLowException();
-  else if (signatureGrade < 1 || executeGrade < 1)
-    throw ShrubberyCreationForm.hpp::GradeTooHighException();
+void ShrubberyCreationForm::execute(Bureaucrat &executer) {
+  if (executer.getGrade() > this->getExecuteGrade())
+    throw AForm::GradeTooLowException();
+  std::ofstream out(this->getTarget().append("_shrubbery").c_str());
+  out << "             v .   ._, |_  .,\n"
+      << "           `-._\\/  .  \\ /    |/_\n"
+      << "               \\  _\\, y | \\//\n"
+      << "         _\\_.___\\, \\/ -.\\||\n"
+      << "           `7-,--.`._||  / / ,\n"
+      << "           /'     `-. `./ / |/_.'\n"
+      << "                     |    |//\n"
+      << "                     |_    /\n"
+      << "                     |-   |\n"
+      << "                     |   =|\n"
+      << "                     |    |\n"
+      << "--------------------/ ,  . \\--------._\n"
+      << std::endl;
+  std::cout << "Trees have been planted" << std::endl;
 }
 
-ShrubberyCreationForm.hpp::ShrubberyCreationForm.hpp()
-    : _name("Default"),
-_signatureGrade(150), _executeGrade(150) {}
+ShrubberyCreationForm::ShrubberyCreationForm()
+    : AForm("ShrubberyCreationForm", 72, 45), _target("Default") {}
 
-ShrubberyCreationForm.hpp::~ShrubberyCreationForm.hpp() {}
+ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target)
+    : AForm("ShrubberyCreationForm", 72, 45), _target(target){};
 
-ShrubberyCreationForm.hpp &
-    ShrubberyCreationForm.hpp::operator=(const ShrubberyCreationForm.hpp &) {
+ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm &src)
+    : AForm("ShrubberyCreationForm", 72, 45), _target(src.getTarget()){};
+
+ShrubberyCreationForm::~ShrubberyCreationForm() {}
+
+ShrubberyCreationForm &
+ShrubberyCreationForm::operator=(const ShrubberyCreationForm &) {
   return *this;
 }
 
-ShrubberyCreationForm.hpp::ShrubberyCreationForm.hpp(
-    const ShrubberyCreationForm.hpp &src)
-    : _name(src._name),
-_signatureGrade(src._signatureGrade), _executeGrade(src._executeGrade) {}
+std::string ShrubberyCreationForm::getTarget(void) { return this->_target; }
 
-std::ostream &operator<<(std::ostream &out, const ShrubberyCreationForm.hpp &
-                                                ShrubberyCreationForm.hpp) {
-  return out << ShrubberyCreationForm.hpp.getName()
-             << ", ShrubberyCreationForm.hpp signature grade : "
-             << ShrubberyCreationForm.hpp.getSignatureGrade()
-             << " , ShrubberyCreationForm.hpp execute grade : "
-             << ShrubberyCreationForm.hpp.getExecuteGrade() << std::endl;
-}
-
-std::string ShrubberyCreationForm.hpp::getName(void) const {
-  return this->_name;
-}
-
-int ShrubberyCreationForm.hpp::getSignatureGrade(void) const {
-  return this->_signatureGrade;
-}
-
-int ShrubberyCreationForm.hpp::getExecuteGrade(void) const {
-  return this->_executeGrade;
-}
-
-const char *ShrubberyCreationForm.hpp::GradeTooHighException::what() const
-    throw() {
-  return "Grade too high";
-}
-
-const char *ShrubberyCreationForm.hpp::GradeTooLowException::what() const
-    throw() {
-  return "Grade too low";
+std::ostream &operator<<(std::ostream &out,
+                         const ShrubberyCreationForm &ShrubberyCreationForm) {
+  return out << ShrubberyCreationForm.getName()
+             << ", ShrubberyCreationForm signature grade : "
+             << ShrubberyCreationForm.getSignatureGrade()
+             << " , ShrubberyCreationForm execute grade : "
+             << ShrubberyCreationForm.getExecuteGrade() << std::endl;
 }
