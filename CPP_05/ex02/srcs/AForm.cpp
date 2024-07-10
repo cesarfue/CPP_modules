@@ -15,7 +15,7 @@ void AForm::beSigned(Bureaucrat &signer) {
 
 AForm::AForm(const std::string name, const int signatureGrade,
              const int executeGrade)
-    : _name(name), _signatureGrade(signatureGrade),
+    : _name(name), _signed(false), _signatureGrade(signatureGrade),
       _executeGrade(executeGrade) {
   if (signatureGrade > 150 || executeGrade > 150)
     throw AForm::GradeTooLowException();
@@ -23,15 +23,17 @@ AForm::AForm(const std::string name, const int signatureGrade,
     throw AForm::GradeTooHighException();
 }
 
-AForm::AForm() : _name("Default"), _signatureGrade(150), _executeGrade(150) {}
+AForm::AForm()
+    : _name("Default"), _signed(false), _signatureGrade(150),
+      _executeGrade(150) {}
 
 AForm::~AForm() {}
 
 AForm &AForm::operator=(const AForm &) { return *this; }
 
 AForm::AForm(const AForm &src)
-    : _name(src._name), _signatureGrade(src._signatureGrade),
-      _executeGrade(src._executeGrade) {}
+    : _name(src._name), _signed(src._signed),
+      _signatureGrade(src._signatureGrade), _executeGrade(src._executeGrade) {}
 
 std::ostream &operator<<(std::ostream &out, const AForm &AForm) {
   return out << AForm.getName()

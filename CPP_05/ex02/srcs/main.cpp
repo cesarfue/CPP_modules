@@ -8,27 +8,30 @@
 int main(void) {
   try {
 
-    Bureaucrat boss("Mr Boss", 2);
-    Bureaucrat secretary("Mr Secretary", 25);
-
-    AForm *robotomy = new RobotomyRequest("badGuy");
-    robotomy->beSigned(secretary);
-    robotomy->execute(boss);
-    delete robotomy;
-
-    std::cout << "\n" << std::endl;
+    Bureaucrat *boss = new Bureaucrat("Mr Boss", 2);
+    Bureaucrat *secretary = new Bureaucrat("Mr Secretary", 25);
 
     AForm *pardon = new PresidentialPardonForm("badGuy");
-    pardon->beSigned(secretary);
-    pardon->execute(boss);
+    secretary->signForm(*pardon);
+    boss->executeForm(*pardon);
     delete pardon;
 
     std::cout << "\n" << std::endl;
 
+    AForm *robotomy = new RobotomyRequest("badGuy");
+    secretary->signForm(*robotomy);
+    boss->executeForm(*robotomy);
+    delete robotomy;
+
+    std::cout << "\n" << std::endl;
+
     AForm *shrubbery = new ShrubberyCreationForm("badGuyGarden");
-    shrubbery->beSigned(secretary);
-    shrubbery->execute(boss);
+    secretary->signForm(*shrubbery);
+    boss->executeForm(*shrubbery);
     delete shrubbery;
+
+    delete boss;
+    delete secretary;
 
   } catch (AForm::GradeTooHighException &e) {
     std::cout << e.what() << std::endl;

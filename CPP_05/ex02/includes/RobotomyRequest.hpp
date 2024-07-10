@@ -8,7 +8,7 @@ private:
   const std::string _target;
 
 public:
-  void execute(Bureaucrat &executer);
+  void execute(Bureaucrat const &executer);
   RobotomyRequest();
   RobotomyRequest(const std::string &target);
   ~RobotomyRequest();

@@ -8,7 +8,7 @@ private:
   const std::string _target;
 
 public:
-  void execute(Bureaucrat &executer);
+  void execute(Bureaucrat const &executer);
   PresidentialPardonForm();
   PresidentialPardonForm(const std::string &target);
   ~PresidentialPardonForm();

@@ -14,6 +14,7 @@ public:
   void incrementGrade();
   void decrementGrade();
   void signForm(AForm &form);
+  void executeForm(AForm &form) const;
   Bureaucrat();
   Bureaucrat(const std::string &name, int grade);
   ~Bureaucrat();

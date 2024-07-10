@@ -2,7 +2,7 @@
 
 static int i = 0;
 
-void RobotomyRequest::execute(Bureaucrat &executer) {
+void RobotomyRequest::execute(Bureaucrat const &executer) {
   if (executer.getGrade() > this->getExecuteGrade())
     throw AForm::GradeTooLowException();
   std::cout << "\n\tBRRRRRRR \n\t dzzzz\n\tBRRRRRRRTAKTAKTAK\n" << std::endl;

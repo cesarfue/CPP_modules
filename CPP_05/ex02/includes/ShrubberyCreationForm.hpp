@@ -9,7 +9,7 @@ private:
   const std::string _target;
 
 public:
-  void execute(Bureaucrat &executer);
+  void execute(Bureaucrat const &executer);
   ShrubberyCreationForm();
   ShrubberyCreationForm(const std::string &target);
   ~ShrubberyCreationForm();

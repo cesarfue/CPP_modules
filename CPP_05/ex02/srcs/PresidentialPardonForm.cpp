@@ -1,6 +1,6 @@
 #include "PresidentialPardonForm.hpp"
 
-void PresidentialPardonForm::execute(Bureaucrat &executer) {
+void PresidentialPardonForm::execute(Bureaucrat const &executer) {
   if (executer.getGrade() > this->getExecuteGrade())
     throw AForm::GradeTooLowException();
   std::cout << this->getTarget() << " has been pardoned by Zaphod Beeblebrox"

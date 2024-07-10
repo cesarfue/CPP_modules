@@ -2,6 +2,11 @@
 
 void Bureaucrat::signForm(AForm &form) { form.beSigned(*this); }
 
+void Bureaucrat::executeForm(AForm &form) const {
+  form.execute(*this);
+  std::cout << this->getName() << " executed " << form.getName() << std::endl;
+}
+
 void Bureaucrat::incrementGrade() { this->setGrade(this->_grade - 1); }
 
 void Bureaucrat::decrementGrade() { this->setGrade(this->_grade + 1); }
