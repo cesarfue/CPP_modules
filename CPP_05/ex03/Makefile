@@ -20,12 +20,13 @@ SRCS			=	main.cpp \
 						PresidentialPardonForm.cpp \
 						RobotomyRequest.cpp \
 						ShrubberyCreationForm.cpp \
+						Intern.cpp 
 
 OBJS_DIR 		=	objs/
 OBJS			=	$(patsubst %.cpp, $(OBJS_DIR)%.o, $(SRCS))
 
 INCLUDES_DIR	=	includes/
-INCLUDES		=	$(INCLUDES_DIR)Bureaucrat.hpp $(INCLUDES_DIR)AForm.hpp $(INCLUDES_DIR)PresidentialPardonForm.hpp $(INCLUDES_DIR)RobotomyRequest.hpp $(INCLUDES_DIR)ShrubberyCreationForm.hpp
+INCLUDES		=	$(INCLUDES_DIR)Bureaucrat.hpp $(INCLUDES_DIR)AForm.hpp $(INCLUDES_DIR)PresidentialPardonForm.hpp $(INCLUDES_DIR)RobotomyRequest.hpp $(INCLUDES_DIR)ShrubberyCreationForm.hpp $(INCLUDES_DIR)Intern.hpp
 
 RM				=	rm -r
 CC				=	c++

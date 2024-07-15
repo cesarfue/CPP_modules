@@ -11,4 +11,9 @@ public:
   ~Intern();
   Intern &operator=(const Intern &);
   Intern(const Intern &);
+
+  class InstructionsUnclearException : public std::exception {
+  public:
+    const char *what() const throw();
+  };
 };
