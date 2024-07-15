@@ -47,10 +47,8 @@ int main(void) {
   } catch (Intern::InstructionsUnclearException &e) {
     std::cout << e.what() << std::endl;
   }
-
   delete boss;
   delete secretary;
   delete Jogh;
-
   return EXIT_SUCCESS;
 }
