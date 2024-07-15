@@ -20,7 +20,7 @@ OBJS_DIR 		=	objs/
 OBJS			=	$(patsubst %.cpp, $(OBJS_DIR)%.o, $(SRCS))
 
 INCLUDES_DIR	=	includes/
-INCLUDES		=	$(INCLUDES_DIR)Template.hpp
+INCLUDES		=	$(INCLUDES_DIR)whatever.hpp
 
 RM				=	rm -r
 CC				=	c++
