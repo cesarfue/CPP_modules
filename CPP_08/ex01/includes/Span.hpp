@@ -12,10 +12,17 @@ private:
   std::vector<int>::iterator _it;
 
 public:
+  void addNumber(std::size_t nbr);
+  std::size_t shortestSpan();
+  std::size_t longestSpan();
+
   Span();
+  Span(unsigned int n);
   ~Span();
   Span &operator=(const Span &);
   Span(const Span &);
+  std::vector<int> getVec();
+  void setN(unsigned int n);
 
   class outOfRangeException : public std::exception {
   public:
