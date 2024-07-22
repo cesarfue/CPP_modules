@@ -34,6 +34,7 @@ int main() {
 
     // Big test
     std::cout << "\tBIG TEST\n" << std::endl;
+    std::cout << "--- no print cause it's really big --------\n" << std::endl;
     Span BigStan(100000);
     for (size_t i = 0; i < 100000; i += 10) {
       BigStan.addNumber(i);
@@ -49,6 +50,9 @@ int main() {
     Span StanWithIterators(100);
     std::vector<int> vecClone = Stan.getVec();
     StanWithIterators.fillSpan(vecClone.begin(), vecClone.end());
+    std::cout << "---- copied first Span into a new Span with fillSpan "
+                 "function ----\n"
+              << std::endl;
 
     std::cout << StanWithIterators << std::endl;
     std::cout << "Longest span : " << StanWithIterators.longestSpan()
