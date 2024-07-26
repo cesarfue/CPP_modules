@@ -14,16 +14,17 @@ NAME			=	btc
 
 SRCS_DIR		=	srcs/
 
-SRCS			=	main.cpp
+SRCS			=	main.cpp \
+						BitcoinExchange.cpp
 
 OBJS_DIR 		=	objs/
 OBJS			=	$(patsubst %.cpp, $(OBJS_DIR)%.o, $(SRCS))
 
 INCLUDES_DIR	=	includes/
-INCLUDES		=	$(INCLUDES_DIR)MutantStack.hpp
+INCLUDES		=	$(INCLUDES_DIR)BitcoinExchange.hpp
 
 RM				=	rm -r
-CC				=	c++
+CC				= c++
 FLAGS			=	-Wall -Wextra -Werror -std=c++98 -g
 
 all				:	$(NAME)

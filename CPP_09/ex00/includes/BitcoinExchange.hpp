@@ -3,14 +3,16 @@
 #include <fstream>
 #include <iostream>
 #include <map>
+#include <string>
 
 class BitcoinEX {
 private:
   std::map<std::string, float> data;
 
 public:
-  void parse_CSV(std::string csv);
-
+  void parse_CSV(const std::string &csv);
+  void print_value(std::ifstream &input);
+  void printData() const;
   BitcoinEX();
   ~BitcoinEX();
   BitcoinEX(const BitcoinEX &src);
