@@ -1,4 +1,5 @@
-#pragma once
+#ifndef ARRAY_HPP
+#define ARRAY_HPP
 
 #include <cstddef>
 #include <exception>
@@ -24,11 +25,13 @@ public:
       this->_arr = new T[src._n];
       this->_n = src._n;
     }
-    for (int i = 0; i < _n; ++i) {
+    for (int i = 0; i < static_cast<int>(_n); ++i) {
       this->_arr[i] = src._arr[i];
     }
     return *this;
   }
+
+  Array(const Array &src) { *this = src; }
 
   T &operator[](unsigned int index) {
     if (index >= _n)
@@ -43,3 +46,5 @@ public:
     virtual const char *what() const throw() { return "Invalid index"; }
   };
 };
+
+#endif

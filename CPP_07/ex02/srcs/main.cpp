@@ -14,6 +14,19 @@ int main() {
   stringArr[1] = "BOUUH";
   stringArr[2] = "BOUUH";
 
+  Array<std::string> assignArr = stringArr;
+  Array<std::string> copyArr(stringArr);
+  std::cout << "\nJust showing copy constructors works : " << std::endl;
+  for (std::size_t i = 0; i < stringArr.size(); i++) {
+    std::cout << copyArr[i] << " ";
+  }
+  std::cout << std::endl;
+  for (std::size_t i = 0; i < stringArr.size(); i++) {
+    std::cout << assignArr[i] << " ";
+  }
+
+  std::cout << "\n" << std::endl;
+
   for (std::size_t i = 0; i < intArr.size(); ++i) {
     std::cout << intArr[i] << " ";
   }
