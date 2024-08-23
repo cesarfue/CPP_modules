@@ -20,18 +20,18 @@ public:
     if (this == &src)
       return *this;
     if (this->_n != src._n) {
-      if (this->_arr)
+      if (this->_arr != NULL)
         delete[] this->_arr;
       this->_arr = new T[src._n];
       this->_n = src._n;
     }
-    for (int i = 0; i < static_cast<int>(_n); ++i) {
+    for (unsigned int i = 0; i < _n; ++i) {
       this->_arr[i] = src._arr[i];
     }
     return *this;
   }
 
-  Array(const Array &src) { *this = src; }
+  Array(const Array &src) : _arr(NULL), _n(0) { *this = src; }
 
   T &operator[](unsigned int index) {
     if (index >= _n)
