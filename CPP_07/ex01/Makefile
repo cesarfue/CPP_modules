@@ -22,7 +22,7 @@ OBJS			=	$(patsubst %.cpp, $(OBJS_DIR)%.o, $(SRCS))
 INCLUDES_DIR	=	includes/
 INCLUDES		=	$(INCLUDES_DIR)iter.hpp
 
-RM				=	rm -r
+RM				=	rm -rf
 CC				=	c++
 FLAGS			=	-Wall -Wextra -Werror -std=c++98 -g
 

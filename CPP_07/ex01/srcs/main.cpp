@@ -23,8 +23,8 @@ int main() {
   std::string test1[] = {"BOOH", "BOOH", "BOOH"};
   int test2[] = {0, 8, 2, 0, 6};
 
-  ::iter(test1, 3, boohfy<std::string>);
-  ::iter(test2, 5, boohfy<int>);
+  ::iter(test1, 3, boohfy);
+  ::iter(test2, 5, boohfy);
 
   ::iter(test1, 3, print);
   std::cout << std::endl;
