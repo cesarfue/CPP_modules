@@ -1,48 +1,42 @@
-#include "Array.hpp"
-#include <cstdlib>
+#include <Array.hpp>
 #include <iostream>
 
-int main() {
-
-  Array<int> intArr(3);
-  intArr[0] = 234;
-  intArr[1] = 3;
-  intArr[2] = 2200;
-
-  Array<std::string> stringArr(3);
-  stringArr[0] = "BOUH";
-  stringArr[1] = "BOUUH";
-  stringArr[2] = "BOUUH";
-
-  Array<std::string> assignArr = stringArr;
-  Array<std::string> copyArr(assignArr);
-
-  std::cout << "\nJust showing copy constructors works : " << std::endl;
-  for (std::size_t i = 0; i < stringArr.size(); i++) {
-    std::cout << copyArr[i] << " ";
+#define MAX_VAL 750
+int main(int, char **) {
+  Array<int> numbers(MAX_VAL);
+  int *mirror = new int[MAX_VAL];
+  srand(time(NULL));
+  for (int i = 0; i < MAX_VAL; i++) {
+    const int value = rand();
+    numbers[i] = value;
+    mirror[i] = value;
   }
-  std::cout << std::endl;
-  for (std::size_t i = 0; i < stringArr.size(); i++) {
-    std::cout << assignArr[i] << " ";
+  // SCOPE
+  {
+    Array<int> tmp = numbers;
+    Array<int> test(tmp);
   }
 
-  std::cout << "\n" << std::endl;
-
-  for (std::size_t i = 0; i < intArr.size(); ++i) {
-    std::cout << intArr[i] << " ";
+  for (int i = 0; i < MAX_VAL; i++) {
+    if (mirror[i] != numbers[i]) {
+      std::cerr << "didn't save the same value!!" << std::endl;
+      return 1;
+    }
   }
-  std::cout << std::endl;
-
-  for (std::size_t i = 0; i < stringArr.size(); ++i) {
-    std::cout << stringArr[i] << " ";
-  }
-  std::cout << std::endl;
-
   try {
-    std::cout << stringArr[3] << std::endl;
-  } catch (std::exception &e) {
-    std::cerr << e.what() << std::endl;
+    numbers[-2] = 0;
+  } catch (const std::exception &e) {
+    std::cerr << e.what() << '\n';
+  }
+  try {
+    numbers[MAX_VAL] = 0;
+  } catch (const std::exception &e) {
+    std::cerr << e.what() << '\n';
   }
 
+  for (int i = 0; i < MAX_VAL; i++) {
+    numbers[i] = rand();
+  }
+  delete[] mirror; //
   return 0;
 }

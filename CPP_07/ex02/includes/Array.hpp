@@ -33,13 +33,13 @@ public:
 
   Array(const Array &src) : _arr(NULL), _n(0) { *this = src; }
 
-  T &operator[](unsigned int index) {
+  T &operator[](unsigned int index) const {
     if (index >= _n)
       throw(Array::InvalidIndexException());
     return _arr[index];
   }
 
-  std::size_t size() { return _n; }
+  std::size_t size() const { return _n; }
 
   class InvalidIndexException : public std::exception {
   public:
