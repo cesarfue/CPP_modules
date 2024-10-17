@@ -9,10 +9,10 @@ void BitcoinEX::printData() const {
 
 bool is_out_of_range(double quantity) {
   if (quantity < 0) {
-    std::cout << "Error: not a positive number" << std::endl;
+    std::cout << "Error: not a positive number." << std::endl;
     return true;
   } else if (quantity > 1000) {
-    std::cout << "Error: too large a number" << std::endl;
+    std::cout << "Error: too large a number." << std::endl;
     return true;
   }
   return false;
@@ -20,7 +20,7 @@ bool is_out_of_range(double quantity) {
 
 void BitcoinEX::parse_CSV(const std::string &csv) {
 
-  std::ifstream file(csv);
+  std::ifstream file(csv.c_str());
   std::string line;
   size_t n;
   std::string keystr, valstr;
@@ -34,7 +34,10 @@ void BitcoinEX::parse_CSV(const std::string &csv) {
     keystr = line.substr(0, n);
     valstr = line.substr(n + 1);
     try {
-      val = std::stod(valstr);
+      std::stringstream ss(valstr);
+      if (!(ss >> val) || !ss.eof()) {
+        continue;
+      }
       this->data[keystr] = val;
     } catch (std::exception &e) {
       (void)e;
@@ -55,9 +58,14 @@ void BitcoinEX::print_value(std::ifstream &file) {
       continue;
     }
     datestr = line.substr(0, n - 1);
+    if (datestr == "date")
+      continue;
     quantitystr = line.substr(n + 1);
     try {
-      quantity = std::stod(quantitystr);
+      std::stringstream ss(quantitystr);
+      if (!(ss >> quantity) || !ss.eof()) {
+        continue;
+      }
       if (is_out_of_range(quantity) == true) {
         continue;
       }

@@ -1,5 +1,6 @@
 #pragma once
 
+#include <cstdlib>
 #include <iostream>
 #include <sstream>
 #include <stack>
@@ -10,7 +11,7 @@ private:
   std::stack<int> stack;
 
 public:
-  void call(const std::string input);
+  int call(const std::string input);
   void calc(char operand);
   void print();
   RPN();

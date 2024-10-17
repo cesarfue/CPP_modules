@@ -1,5 +1,6 @@
 #include "PmergeMe.hpp"
 #include <ctime>
+#include <sstream>
 
 void PmergeMe::insertionSortDeque(std::deque<int> &deq, int start, int end) {
 
@@ -160,7 +161,10 @@ PmergeMe::PmergeMe(int argc, char **argv) {
   for (size_t i = 1; i < static_cast<size_t>(argc); i++) {
     double value;
     try {
-      value = std::stod(argv[i]);
+      std::stringstream ss(argv[i]);
+      if (!(ss >> value) || !ss.eof()) {
+        std::cerr << "Error: invalid input" << std::endl;
+      }
     } catch (std::invalid_argument &e) {
       throw;
     }

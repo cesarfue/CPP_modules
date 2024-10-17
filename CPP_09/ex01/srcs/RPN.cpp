@@ -1,21 +1,23 @@
 #include "RPN.hpp"
 
-void RPN::call(const std::string input) {
+int RPN::call(const std::string input) {
   if (input.length() >= 2) {
     std::cerr << "Error: '" << input << "': invalid argument" << std::endl;
-    return;
+    return 1;
   }
 
   if (input.length() == 1) {
     if (input.find_first_of("+-/*") != std::string::npos) {
       calc(input[0]);
-      return;
+      return 0;
     } else if (isdigit(input[0])) {
-      stack.push(stoi(input));
+      stack.push(atoi(input.c_str()));
     } else {
       std::cerr << "Error: invalid argument or operand" << std::endl;
+      return 1;
     }
   }
+  return 0;
 }
 
 void RPN::calc(char operand) {

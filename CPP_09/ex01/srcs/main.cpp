@@ -25,8 +25,12 @@ int main(int argc, char *argv[]) {
   RPN RPNcalculator;
   std::stringstream ss(input);
   std::string token;
+  int ret;
   while (std::getline(ss, token, ' ')) {
-    RPNcalculator.call(token);
+    ret = RPNcalculator.call(token);
+    if (ret == 1) {
+      return 1;
+    }
   }
   RPNcalculator.print();
   return 0;
