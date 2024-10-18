@@ -1,5 +1,6 @@
 #pragma once
 
+#include <ctime>
 #include <fstream>
 #include <iostream>
 #include <map>
@@ -19,8 +20,9 @@ public:
   BitcoinEX(const BitcoinEX &src);
   BitcoinEX &operator=(const BitcoinEX &src);
 
-  class InvalidFile : public std::exception {
+public:
+  class BTCException : public std::runtime_error {
   public:
-    const char *what() const throw();
+    explicit BTCException(const std::string &msg);
   };
 };

@@ -13,7 +13,12 @@ int main(int argc, char **argv) {
   std::string CSVfile = "data.csv";
 
   BitcoinEX ex;
-  ex.parse_CSV(CSVfile);
-  ex.print_value(input);
+  try {
+
+    ex.parse_CSV(CSVfile);
+    ex.print_value(input);
+  } catch (const BitcoinEX::BTCException &e) {
+    std::cerr << e.what() << std::endl;
+  }
   return 0;
 }
