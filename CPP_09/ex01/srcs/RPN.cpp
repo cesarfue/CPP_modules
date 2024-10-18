@@ -8,7 +8,11 @@ int RPN::call(const std::string input) {
 
   if (input.length() == 1) {
     if (input.find_first_of("+-/*") != std::string::npos) {
-      calc(input[0]);
+      try {
+        calc(input[0]);
+      } catch (const RPNException &e) {
+        throw;
+      }
       return 0;
     } else if (isdigit(input[0])) {
       stack.push(atoi(input.c_str()));
@@ -39,6 +43,8 @@ void RPN::calc(char operand) {
     result = op1 - op2;
     break;
   case '/':
+    if (op2 == 0)
+      throw RPNException("division by zero");
     result = op1 / op2;
     break;
   case '*':
@@ -81,3 +87,6 @@ RPN &RPN::operator=(const RPN &src) {
 }
 
 RPN::RPN(const RPN &src) { *this = src; }
+
+RPN::RPNException::RPNException(const std::string &msg)
+    : std::runtime_error("Error: " + msg) {}

@@ -18,4 +18,10 @@ public:
   ~RPN();
   RPN &operator=(const RPN &);
   RPN(const RPN &);
+
+public:
+  class RPNException : public std::runtime_error {
+  public:
+    explicit RPNException(const std::string &msg);
+  };
 };

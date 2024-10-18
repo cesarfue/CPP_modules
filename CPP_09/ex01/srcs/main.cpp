@@ -27,7 +27,12 @@ int main(int argc, char *argv[]) {
   std::string token;
   int ret;
   while (std::getline(ss, token, ' ')) {
-    ret = RPNcalculator.call(token);
+    try {
+      ret = RPNcalculator.call(token);
+    } catch (const RPN::RPNException &e) {
+      std::cerr << e.what() << std::endl;
+      return 1;
+    }
     if (ret == 1) {
       return 1;
     }
